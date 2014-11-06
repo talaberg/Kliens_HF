@@ -38,7 +38,7 @@
   <Class Name="Kikerdezo.App">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAEAAAQAAAgAAAAAAIAAABAAEQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAEAAAQAAAgAAAAAAIAAABAAEQAAAQAAAAAA=</HashCode>
       <FileName>App.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -49,21 +49,21 @@
   <Class Name="Kikerdezo.Question">
     <Position X="8.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAA=</HashCode>
       <FileName>Question.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kikerdezo.Answer">
     <Position X="10.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAA=</HashCode>
       <FileName>Answer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kikerdezo.Keywords">
     <Position X="12" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAA=</HashCode>
       <FileName>Keywords.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -74,9 +74,9 @@
       <FileName>QuestionEntry.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Field Name="Question" />
       <Field Name="Answer" />
       <Field Name="Keywords" />
-      <Field Name="Question" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kikerdezo.TestView">

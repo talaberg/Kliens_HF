@@ -7,6 +7,9 @@ namespace Kikerdezo
 {
     public class QuestionBank
     {
+        /// <summary>
+        /// Qustion entries of the question bank.
+        /// </summary>
         private List<QuestionEntry> QuestionEntries;
         private List<QView> Views;
 
