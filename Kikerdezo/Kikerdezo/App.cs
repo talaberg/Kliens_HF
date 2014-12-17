@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -10,33 +11,44 @@ namespace Kikerdezo
     {
         private Activity CurrentActivity;
         private static App theApp;
-        private Form mainForm;
-        private QuestionBank Questions;
+        private Form AppMainForm;
+        private QuestionBank CurrentQBank = null;
 
-        public static App Instance()
+        public static App Instance
         {
-            return theApp;
+            get { return theApp; }
         }
 
         public static void Initialize(Form form)
         {
             theApp = new App();
-            theApp.mainForm = form;
+            theApp.AppMainForm = form;
+        }
+        public void NewActivity(string fileName)
+        {
+            if (CurrentQBank != null)
+            {
+                MessageBox.Show("Egy kérdésbank már meg van nyitva!");
+                return;
+            }
+
+            CurrentQBank = new QuestionBank();
+            try
+            {
+                CurrentQBank.OpenQuestionBank(fileName);
+                BrowseView B = new BrowseView(CurrentQBank);
+                B.Name = "Browse";
+                CurrentQBank.AttachView(B);
+                AppMainForm.Controls.Add(B);
+                
+            }
+            catch(System.IO.IOException)
+            {
+                MessageBox.Show("A fájl sérült, vagy használatban van!");
+                CurrentQBank = null;
+            }
         }
 
-        public void CreateQuestionBank()
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void OpenQuestionBank()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void SaveQuestionBank()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

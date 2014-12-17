@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kikerdezo
 {
-    public class TestView : UserControl, QView
+    public class ResultView : UserControl, QView
     {
-        public TestView()
+        public ResultView()
         {
         }
         public void Update()

@@ -10,14 +10,35 @@ namespace Kikerdezo
         /// <summary>
         /// Stores a question.
         /// </summary>
-        private Question Question;
+        private string Question;
         /// <summary>
         /// Stores an answer.
         /// </summary>
-        private Answer Answer;
+        private string Answer;
         /// <summary>
         /// Stores a list of keywords.
         /// </summary>
-        private Keywords Keywords;
+        private string Keywords;
+
+        /// <summary>
+        /// Returns with a Question-Answer-Keyword list (QAK)
+        /// </summary>
+        public List<string> QAK
+        {
+            get
+            {
+                List<string> x = new List<string>();
+                x.Add(Question);
+                x.Add(Answer);
+                x.Add(Keywords);
+                return x;
+            }
+            set
+            {
+                Question = value.ElementAt(0);
+                Answer = value.ElementAt(1);
+                Keywords = value.ElementAt(2);
+            }
+        }
     }
 }

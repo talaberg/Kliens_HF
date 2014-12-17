@@ -48,8 +48,15 @@
     <Compile Include="Answer.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Browse.cs" />
-    <Compile Include="BrowseView.cs" />
-    <Compile Include="EditorView.cs" />
+    <Compile Include="BrowseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BrowseView.Designer.cs">
+      <DependentUpon>BrowseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +71,20 @@
     <Compile Include="QuestionEntry.cs" />
     <Compile Include="QView.cs" />
     <Compile Include="Result.cs" />
+    <Compile Include="ResultView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Test.cs" />
-    <Compile Include="TestView.cs" />
+    <Compile Include="TestView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WriteFile.cs" />
+    <EmbeddedResource Include="BrowseView.resx">
+      <DependentUpon>BrowseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
