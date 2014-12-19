@@ -71,6 +71,7 @@
             this.Next.TabIndex = 3;
             this.Next.Text = "Next";
             this.Next.UseVisualStyleBackColor = true;
+            this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // Previous
             // 
@@ -80,8 +81,9 @@
             this.Previous.TabIndex = 4;
             this.Previous.Text = "Previous";
             this.Previous.UseVisualStyleBackColor = true;
+            this.Previous.Click += new System.EventHandler(this.Previous_Click);
             // 
-            // BrowseQView
+            // BrowseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,8 +92,8 @@
             this.Controls.Add(this.Valasz);
             this.Controls.Add(this.Megold);
             this.Controls.Add(this.Kerdes);
-            this.Name = "BrowseQView";
-            this.Size = new System.Drawing.Size(404, 337);
+            this.Name = "BrowseView";
+            this.Size = new System.Drawing.Size(654, 596);
             this.ResumeLayout(false);
             this.PerformLayout();
 

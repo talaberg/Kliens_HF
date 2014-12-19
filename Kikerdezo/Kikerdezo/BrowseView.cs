@@ -19,11 +19,34 @@ namespace Kikerdezo
         {
             InitializeComponent();
             this.Qbank = B;
+            CurrentQ = 0;
+            Kerdes.Text =   
+            Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
+
         }
         public void Update()
         {
+            Kerdes.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[0];
+            Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
+        }
 
-            Invalidate();
+        private void Next_Click(object sender, EventArgs e)
+        {
+            if (CurrentQ < Qbank.Questions.Count)
+            {
+                CurrentQ += 1;
+                Update();
+            }
+            
+        }
+
+        private void Previous_Click(object sender, EventArgs e)
+        {
+            if (CurrentQ > 0)
+            {
+                CurrentQ -= 1;
+                Update();
+            }
         }
     }
 }

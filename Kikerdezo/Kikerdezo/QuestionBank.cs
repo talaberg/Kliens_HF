@@ -42,7 +42,7 @@ namespace Kikerdezo
         {
            /* try
             {*/
-                var reader = new StreamReader(File.OpenRead(fileName)); // Fájl megnyitása
+            var reader = new StreamReader(File.OpenRead(fileName), Encoding.GetEncoding("iso-8859-2")); // Fájl megnyitása
 
                 try
                 {

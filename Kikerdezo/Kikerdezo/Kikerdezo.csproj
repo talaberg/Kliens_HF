@@ -54,6 +54,9 @@
     <Compile Include="BrowseView.Designer.cs">
       <DependentUpon>BrowseView.cs</DependentUpon>
     </Compile>
+    <Compile Include="GrowLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="EditorView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +84,9 @@
     <Compile Include="WriteFile.cs" />
     <EmbeddedResource Include="BrowseView.resx">
       <DependentUpon>BrowseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorView.resx">
+      <DependentUpon>EditorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

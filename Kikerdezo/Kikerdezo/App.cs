@@ -36,7 +36,8 @@ namespace Kikerdezo
             try
             {
                 CurrentQBank.OpenQuestionBank(fileName);
-                BrowseView B = new BrowseView(CurrentQBank);
+                EditorView B = new EditorView(CurrentQBank);
+                //BrowseView B = new BrowseView(CurrentQBank);
                 B.Name = "Browse";
                 CurrentQBank.AttachView(B);
                 AppMainForm.Controls.Add(B);
