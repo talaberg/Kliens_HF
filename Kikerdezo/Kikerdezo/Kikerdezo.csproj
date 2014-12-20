@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="Answer.cs" />
+    <Compile Include="AnswerCheck.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Browse.cs" />
     <Compile Include="BrowseView.cs">
