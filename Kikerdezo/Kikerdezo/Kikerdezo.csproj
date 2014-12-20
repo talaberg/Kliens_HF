@@ -54,6 +54,9 @@
     <Compile Include="BrowseView.Designer.cs">
       <DependentUpon>BrowseView.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GrowLabel.cs">
       <SubType>Component</SubType>
     </Compile>

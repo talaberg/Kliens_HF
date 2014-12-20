@@ -15,7 +15,7 @@ namespace Kikerdezo
         public TestView()
         {
         }
-        public void Update()
+        public void UpdateView()
         {
             throw new System.NotImplementedException();
         }

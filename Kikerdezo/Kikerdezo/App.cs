@@ -29,6 +29,7 @@ namespace Kikerdezo
             theApp = new App();
             theApp.AppMainForm = form;
         }
+
         public void NewActivity(string fileName)
         {
             if (CurrentQBank != null)
@@ -43,7 +44,7 @@ namespace Kikerdezo
 
                 EditorView E = new EditorView();            // Create and init new editor view
                 E.Initialize(ref CurrentQBank);
-                E.Name = "Browse";
+                E.Name = "Edit";
                 
 
                 DocViews.Add(E);                            // Register in DocViews
@@ -52,7 +53,7 @@ namespace Kikerdezo
 
                 BrowseView B = new BrowseView();            // Create and init new editor view
                 B.Initialize(ref CurrentQBank);
-                B.Name = "Edit";
+                B.Name = "Browse";
 
                 DocViews.Add(B);                            //Register in DocViews
                 CurrentQBank.AttachView(B);                 //Register in QBank interface

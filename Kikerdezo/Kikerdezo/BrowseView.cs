@@ -24,21 +24,29 @@ namespace Kikerdezo
         {
             this.Qbank = B;
             CurrentQ = 0;
-            Kerdes.Text =
-            Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
-        }
-        public void Update()
-        {
             Kerdes.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[0];
             Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
+        }
+        public void UpdateView()
+        {
+            if (Qbank.Questions.Any())
+            {
+                Kerdes.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[0];
+                Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
+            }
+            else
+            {
+                Kerdes.Text = "A kérdésbank jelenleg üres...";
+                Megold.Text = "";
+            }
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            if (CurrentQ < Qbank.Questions.Count)
+            if (CurrentQ < Qbank.Questions.Count - 1)
             {
                 CurrentQ += 1;
-                Update();
+                UpdateView();
             }
             
         }
@@ -48,7 +56,7 @@ namespace Kikerdezo
             if (CurrentQ > 0)
             {
                 CurrentQ -= 1;
-                Update();
+                UpdateView();
             }
         }
     }

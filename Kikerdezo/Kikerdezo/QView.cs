@@ -7,6 +7,6 @@ namespace Kikerdezo
 {
     public interface QView
     {
-        void Update();
+        void UpdateView();
     }
 }

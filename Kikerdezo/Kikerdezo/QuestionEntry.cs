@@ -7,6 +7,7 @@ namespace Kikerdezo
 {
     public class QuestionEntry
     {
+        private static Int64 IDGenerator = 0;
         /// <summary>
         /// Stores a question.
         /// </summary>
@@ -20,9 +21,14 @@ namespace Kikerdezo
         /// </summary>
         private string Keywords;
 
+        private Int64 ID;
         /// <summary>
         /// Returns with a Question-Answer-Keyword list (QAK)
         /// </summary>
+        public QuestionEntry()
+        {
+            ID = IDGenerator++;
+        }
         public List<string> QAK
         {
             get
@@ -39,6 +45,10 @@ namespace Kikerdezo
                 Answer = value.ElementAt(1);
                 Keywords = value.ElementAt(2);
             }
+        }
+        public Int64 QID
+        {
+            get { return ID; }
         }
     }
 }

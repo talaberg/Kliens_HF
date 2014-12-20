@@ -86,6 +86,18 @@ namespace Kikerdezo
             
         }
 
+        public void AddQuestion(QuestionEntry Q)
+        {
+            QuestionEntries.Add(Q);
+            UpdateAllViews();
+        }
+
+        public void RmvQuestion(Int64 ID)
+        {
+            int Qindex = QuestionEntries.FindIndex(x => x.QID == ID);
+            QuestionEntries.RemoveAt(Qindex);
+            UpdateAllViews();
+        }
         public static void SaveQuestionBank()
         {
             throw new System.NotImplementedException();
@@ -94,7 +106,7 @@ namespace Kikerdezo
         public void AttachView(QView v)
         {
             Views.Add(v);
-            v.Update();
+            v.UpdateView();
         }
         public void DetachView(QView v)
         {
@@ -107,7 +119,7 @@ namespace Kikerdezo
         protected void UpdateAllViews()
         {
             foreach (QView view in Views)
-                view.Update();
+                view.UpdateView();
         }
 
     }

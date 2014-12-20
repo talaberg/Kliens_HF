@@ -13,7 +13,6 @@ namespace Kikerdezo
     public class EditorView : UserControl, QView
     {
         private TableLayoutPanel tableLayoutPanel;
-        private Int32 tableRowCount = 0;
         private QuestionBank Qbank;// A kérdés bank, amiből dolgozunk
         public EditorView()
         {
@@ -23,14 +22,9 @@ namespace Kikerdezo
         }
         public void Initialize(ref QuestionBank B)
         {
-            Addlabel("Kérdés", 1, 1);
-            Addlabel("Válasz", 2, 1);
-            Addlabel("Kulcsszavak", 3, 1);
-            tableRowCount = 1;
-            Qbank = B;
-            UpdateTable();
+            Qbank = B;            
         }
-        public void Update()
+        public void UpdateView()
         {
             UpdateTable();
         }
@@ -47,10 +41,11 @@ namespace Kikerdezo
             this.tableLayoutPanel.AutoSize = true;
             this.tableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel.ColumnCount = 3;
+            this.tableLayoutPanel.ColumnCount = 4;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
             this.tableLayoutPanel.Location = new System.Drawing.Point(168, 50);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel.MinimumSize = new System.Drawing.Size(400, 0);
@@ -86,7 +81,13 @@ namespace Kikerdezo
         }
         private void UpdateTable()
         {
+            tableLayoutPanel.Hide();
             tableLayoutPanel.Controls.Clear();
+
+            Addlabel("Kérdés", 0, 0);
+            Addlabel("Válasz", 1, 0);
+            Addlabel("Kulcsszavak", 2, 0);            
+            
             for (int i = 0; i < Qbank.Questions.Count; i++)
             {
                 for (int k = 0; k < 3; k++)
@@ -94,9 +95,23 @@ namespace Kikerdezo
                     string s;
                     s = Qbank.Questions.ElementAt(i).QAK[k];
                     
-                    Addlabel(s, k, i);
+                    Addlabel(s, k, i+1);
                 }
+                DeleteButton b = new DeleteButton();        // Place a delete button at each row, and set the current question's ID
+                b.QID = Qbank.Questions.ElementAt(i).QID;
+                b.Text = "delete";
+                b.Click += new System.EventHandler(this.deleteButton);
+                tableLayoutPanel.Controls.Add(b, 4, i+1);
+
+                tableLayoutPanel.Show();
             }
+        }
+        private void deleteButton(object sender, EventArgs e)
+        {
+            DeleteButton b = sender as DeleteButton;
+
+            Qbank.RmvQuestion(b.QID);
+            
         }
     }
 }
