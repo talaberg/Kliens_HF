@@ -100,6 +100,10 @@ namespace Kikerdezo
         {
             Views.Remove(v);
         }
+        public void SwitchView(int index)
+        {
+            //Views.ElementAt(ActiveViewIndex).
+        }
         protected void UpdateAllViews()
         {
             foreach (QView view in Views)

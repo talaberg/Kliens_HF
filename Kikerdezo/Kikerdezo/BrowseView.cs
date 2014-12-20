@@ -15,14 +15,17 @@ namespace Kikerdezo
         private int CurrentQ;// Az aktuálisan megjelenítendő kérdés
         private QuestionBank Qbank;// A kérdés bank, amiből dolgozunk
         
-        public BrowseView(QuestionBank B)
+        public BrowseView()
         {
             InitializeComponent();
+            this.Hide();
+        }
+        public void Initialize(ref QuestionBank B)
+        {
             this.Qbank = B;
             CurrentQ = 0;
-            Kerdes.Text =   
+            Kerdes.Text =
             Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
-
         }
         public void Update()
         {

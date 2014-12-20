@@ -16,5 +16,20 @@ namespace Kikerdezo
         {
             InitializeComponent();
         }
+
+        private void browse_Click(object sender, EventArgs e)
+        {
+            App.Instance.SwitchView("Browse");
+        }
+
+        private void test_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void edit_Click(object sender, EventArgs e)
+        {
+            App.Instance.SwitchView("Edit");
+        }
     }
 }

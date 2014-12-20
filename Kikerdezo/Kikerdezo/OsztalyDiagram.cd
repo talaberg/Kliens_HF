@@ -27,7 +27,7 @@
   <Class Name="Kikerdezo.QuestionBank">
     <Position X="10.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EgQAAAAAAEAAAAAAAAAAAAAAIAAAIAAAAAQAQAAIAAA=</HashCode>
+      <HashCode>EgAAAAAAAEAAAAAAAAAACAAAIAAAIAAEAAQAQAAIAAA=</HashCode>
       <FileName>QuestionBank.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -38,11 +38,10 @@
   <Class Name="Kikerdezo.App">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAQAAAAAAAAAACQAABAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAQEAAAAECAACCQAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>App.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="CurrentActivity" />
       <Field Name="CurrentQBank" />
     </ShowAsAssociation>
   </Class>
@@ -99,7 +98,7 @@
   <Class Name="Kikerdezo.BrowseView">
     <Position X="15.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgQACAAAACAAAgAAAACAAAACACAAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>AgQACAAAACAAEwAAAASAAAACACQAAAAAAAAAAAgAAAE=</HashCode>
       <FileName>BrowseView.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

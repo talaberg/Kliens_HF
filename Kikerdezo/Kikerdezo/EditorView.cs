@@ -15,10 +15,14 @@ namespace Kikerdezo
         private TableLayoutPanel tableLayoutPanel;
         private Int32 tableRowCount = 0;
         private QuestionBank Qbank;// A kérdés bank, amiből dolgozunk
-        public EditorView(QuestionBank B)
+        public EditorView()
         {
             InitializeComponent();
-
+            this.Hide();
+            
+        }
+        public void Initialize(ref QuestionBank B)
+        {
             Addlabel("Kérdés", 1, 1);
             Addlabel("Válasz", 2, 1);
             Addlabel("Kulcsszavak", 3, 1);
@@ -31,6 +35,7 @@ namespace Kikerdezo
             UpdateTable();
         }
 
+
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -38,20 +43,22 @@ namespace Kikerdezo
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.AutoScroll = true;
+            this.tableLayoutPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel.AutoSize = true;
             this.tableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel.ColumnCount = 3;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel.Location = new System.Drawing.Point(66, 68);
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.Location = new System.Drawing.Point(168, 50);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanel.MinimumSize = new System.Drawing.Size(400, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 2;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.Size = new System.Drawing.Size(4, 3);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(400, 3);
             this.tableLayoutPanel.TabIndex = 0;
             this.tableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -59,7 +66,7 @@ namespace Kikerdezo
             // 
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "EditorView";
-            this.Size = new System.Drawing.Size(453, 358);
+            this.Size = new System.Drawing.Size(787, 368);
             this.ResumeLayout(false);
             this.PerformLayout();
 
