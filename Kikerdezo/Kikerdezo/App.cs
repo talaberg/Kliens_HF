@@ -45,6 +45,7 @@ namespace Kikerdezo
                 EditorView E = new EditorView();            // Create and init new editor view
                 E.Initialize(ref CurrentQBank);
                 E.Name = "Edit";
+                E.Anchor = AnchorStyles.None;
                 
 
                 DocViews.Add(E);                            // Register in DocViews

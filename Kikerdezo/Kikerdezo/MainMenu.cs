@@ -15,6 +15,7 @@ namespace Kikerdezo
         public MainMenu()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
 
         private void browse_Click(object sender, EventArgs e)

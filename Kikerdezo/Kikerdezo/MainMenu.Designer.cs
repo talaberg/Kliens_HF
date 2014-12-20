@@ -31,11 +31,14 @@
             this.browse = new System.Windows.Forms.Button();
             this.test = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // browse
             // 
-            this.browse.Location = new System.Drawing.Point(57, 17);
+            this.browse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.browse.Location = new System.Drawing.Point(17, 15);
             this.browse.Name = "browse";
             this.browse.Size = new System.Drawing.Size(89, 23);
             this.browse.TabIndex = 0;
@@ -45,7 +48,8 @@
             // 
             // test
             // 
-            this.test.Location = new System.Drawing.Point(159, 17);
+            this.test.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.test.Location = new System.Drawing.Point(119, 15);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(89, 23);
             this.test.TabIndex = 1;
@@ -55,7 +59,8 @@
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(260, 17);
+            this.edit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.edit.Location = new System.Drawing.Point(220, 15);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(89, 23);
             this.edit.TabIndex = 2;
@@ -63,15 +68,25 @@
             this.edit.UseVisualStyleBackColor = true;
             this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.edit);
+            this.panel1.Controls.Add(this.browse);
+            this.panel1.Controls.Add(this.test);
+            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(325, 52);
+            this.panel1.TabIndex = 3;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.edit);
-            this.Controls.Add(this.test);
-            this.Controls.Add(this.browse);
+            this.Controls.Add(this.panel1);
             this.Name = "MainMenu";
-            this.Size = new System.Drawing.Size(411, 303);
+            this.Size = new System.Drawing.Size(330, 61);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -81,5 +96,6 @@
         private System.Windows.Forms.Button browse;
         private System.Windows.Forms.Button test;
         private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -111,18 +111,19 @@
             // 
             // WorkPanel
             // 
+            this.WorkPanel.AutoScroll = true;
             this.WorkPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.WorkPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.WorkPanel.ColumnCount = 3;
-            this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.WorkPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WorkPanel.Location = new System.Drawing.Point(0, 24);
             this.WorkPanel.Name = "WorkPanel";
-            this.WorkPanel.RowCount = 3;
-            this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.WorkPanel.RowCount = 2;
+            this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.WorkPanel.Size = new System.Drawing.Size(474, 288);
             this.WorkPanel.TabIndex = 1;
             // 

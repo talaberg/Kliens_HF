@@ -19,6 +19,8 @@ namespace Kikerdezo
         {
             InitializeComponent();
             this.Hide();
+            this.Dock = DockStyle.Fill;
+
         }
         public void Initialize(ref QuestionBank B)
         {
