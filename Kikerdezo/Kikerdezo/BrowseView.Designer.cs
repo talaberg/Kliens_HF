@@ -45,7 +45,7 @@
             this.Kerdes.AutoSize = true;
             this.Kerdes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Kerdes.Location = new System.Drawing.Point(34, 170);
-            this.Kerdes.MaximumSize = new System.Drawing.Size(300, 0);
+            this.Kerdes.MaximumSize = new System.Drawing.Size(425, 0);
             this.Kerdes.Name = "Kerdes";
             this.Kerdes.Size = new System.Drawing.Size(70, 24);
             this.Kerdes.TabIndex = 0;
@@ -55,10 +55,11 @@
             // Megold
             // 
             this.Megold.AutoSize = true;
-            this.Megold.Location = new System.Drawing.Point(8, 48);
-            this.Megold.MaximumSize = new System.Drawing.Size(300, 0);
+            this.Megold.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Megold.Location = new System.Drawing.Point(6, 28);
+            this.Megold.MaximumSize = new System.Drawing.Size(425, 0);
             this.Megold.Name = "Megold";
-            this.Megold.Size = new System.Drawing.Size(42, 13);
+            this.Megold.Size = new System.Drawing.Size(54, 17);
             this.Megold.TabIndex = 1;
             this.Megold.Text = "Megold";
             this.Megold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -69,7 +70,7 @@
             this.Valasz.Multiline = true;
             this.Valasz.Name = "Valasz";
             this.Valasz.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Valasz.Size = new System.Drawing.Size(379, 87);
+            this.Valasz.Size = new System.Drawing.Size(425, 87);
             this.Valasz.TabIndex = 2;
             // 
             // Next
@@ -119,7 +120,7 @@
             this.megoldBox.Controls.Add(this.Megold);
             this.megoldBox.Location = new System.Drawing.Point(38, 399);
             this.megoldBox.Name = "megoldBox";
-            this.megoldBox.Size = new System.Drawing.Size(200, 100);
+            this.megoldBox.Size = new System.Drawing.Size(425, 96);
             this.megoldBox.TabIndex = 7;
             this.megoldBox.TabStop = false;
             this.megoldBox.Text = "megoldBox";

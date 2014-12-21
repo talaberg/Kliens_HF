@@ -60,6 +60,14 @@ namespace Kikerdezo
                 CurrentQBank.AttachView(B);                 //Register in QBank interface
                 AppMainForm.GetWorkPanel.Controls.Add(B, 1, 1); //Add to main form controls
 
+                TestView T = new TestView();            // Create and init new test view
+                T.Initialize(ref CurrentQBank);
+                T.Name = "Test";
+
+                DocViews.Add(T);                            //Register in DocViews
+                CurrentQBank.AttachView(T);                 //Register in QBank interface
+                AppMainForm.GetWorkPanel.Controls.Add(T, 1, 1); //Add to main form controls
+
                 E.Show();
             }
             catch(System.IO.IOException)

@@ -28,7 +28,6 @@ namespace Kikerdezo
             CurrentQ = 0;
             Kerdes.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[0];
             Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
-            Megold.Hide();
             megoldBox.Hide();
         }
         public void UpdateView()
@@ -43,7 +42,6 @@ namespace Kikerdezo
                 Kerdes.Text = "A kérdésbank jelenleg üres...";
                 Megold.Text = "";
             }
-            Megold.Hide();
             megoldBox.Hide();
         }
 
@@ -73,14 +71,12 @@ namespace Kikerdezo
                 megoldBox.Text = "Helyes válasz!";
                 megoldBox.BackColor = Color.Green;
                 megoldBox.Show();
-                Megold.Show();
             }
             else
             {
                 megoldBox.Text = "Helytelen válasz!";
                 megoldBox.BackColor = Color.Red;
                 megoldBox.Show();
-                Megold.Show();
             }
         }
     }

@@ -91,6 +91,9 @@
     <Compile Include="TestView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="TestViewLogic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="WriteFile.cs" />
     <EmbeddedResource Include="BrowseView.resx">
       <DependentUpon>BrowseView.cs</DependentUpon>
@@ -113,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TestView.resx">
+      <DependentUpon>TestView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="OsztalyDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

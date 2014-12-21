@@ -25,7 +25,7 @@ namespace Kikerdezo
 
         private void test_Click(object sender, EventArgs e)
         {
-
+            App.Instance.SwitchView("Test");
         }
 
         private void edit_Click(object sender, EventArgs e)
