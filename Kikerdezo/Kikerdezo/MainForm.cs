@@ -18,7 +18,8 @@ namespace Kikerdezo
             InitializeComponent();
             this.Width = 768;
             this.Height = 768;
-            
+           
+
             MainMenu M = new MainMenu();
             WorkPanel.Controls.Add(M, 1, 0);
             WorkPanel.Hide();

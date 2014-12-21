@@ -23,7 +23,7 @@ namespace Kikerdezo
         private Label labelTimer;
         private IContainer components;
         private TableLayoutPanel tableTest;
-        private Panel panelTableHolder;
+        private Label labelTestResult;
         private Button bEnd;
 
         
@@ -43,12 +43,11 @@ namespace Kikerdezo
             this.bEnd = new System.Windows.Forms.Button();
             this.labelTimer = new System.Windows.Forms.Label();
             this.tableTest = new System.Windows.Forms.TableLayoutPanel();
-            this.panelTableHolder = new System.Windows.Forms.Panel();
+            this.labelTestResult = new System.Windows.Forms.Label();
             this.groupBoxTestParam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetQnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSetTestTime)).BeginInit();
             this.groupBoxTimer.SuspendLayout();
-            this.panelTableHolder.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerTest
@@ -171,44 +170,49 @@ namespace Kikerdezo
             // 
             // tableTest
             // 
+            this.tableTest.AutoSize = true;
+            this.tableTest.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableTest.ColumnCount = 3;
-            this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableTest.Location = new System.Drawing.Point(0, 0);
+            this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableTest.Location = new System.Drawing.Point(37, 245);
             this.tableTest.Name = "tableTest";
-            this.tableTest.RowCount = 1;
-            this.tableTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableTest.Size = new System.Drawing.Size(578, 143);
+            this.tableTest.RowCount = 2;
+            this.tableTest.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableTest.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableTest.Size = new System.Drawing.Size(0, 0);
             this.tableTest.TabIndex = 2;
             // 
-            // panelTableHolder
+            // labelTestResult
             // 
-            this.panelTableHolder.AutoScroll = true;
-            this.panelTableHolder.Controls.Add(this.tableTest);
-            this.panelTableHolder.Location = new System.Drawing.Point(37, 233);
-            this.panelTableHolder.MinimumSize = new System.Drawing.Size(500, 0);
-            this.panelTableHolder.Name = "panelTableHolder";
-            this.panelTableHolder.Size = new System.Drawing.Size(578, 143);
-            this.panelTableHolder.TabIndex = 3;
+            this.labelTestResult.AutoSize = true;
+            this.labelTestResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelTestResult.Location = new System.Drawing.Point(51, 180);
+            this.labelTestResult.Name = "labelTestResult";
+            this.labelTestResult.Size = new System.Drawing.Size(147, 20);
+            this.labelTestResult.TabIndex = 4;
+            this.labelTestResult.Text = "A teszt véget ért.";
             // 
             // TestView
             // 
             this.AutoScroll = true;
-            this.Controls.Add(this.panelTableHolder);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.tableTest);
+            this.Controls.Add(this.labelTestResult);
             this.Controls.Add(this.groupBoxTimer);
             this.Controls.Add(this.groupBoxTestParam);
             this.Name = "TestView";
-            this.Size = new System.Drawing.Size(650, 417);
+            this.Size = new System.Drawing.Size(618, 248);
             this.groupBoxTestParam.ResumeLayout(false);
             this.groupBoxTestParam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetQnum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSetTestTime)).EndInit();
             this.groupBoxTimer.ResumeLayout(false);
             this.groupBoxTimer.PerformLayout();
-            this.panelTableHolder.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

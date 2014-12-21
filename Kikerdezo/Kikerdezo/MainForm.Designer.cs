@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.megnyitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,7 @@
             this.segítségToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(474, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(466, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,27 +60,27 @@
             this.bezarasToolStripMenuItem,
             this.kilepesToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // megnyitasToolStripMenuItem
             // 
             this.megnyitasToolStripMenuItem.Name = "megnyitasToolStripMenuItem";
-            this.megnyitasToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.megnyitasToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.megnyitasToolStripMenuItem.Text = "Kérdésbank megnyitása...";
             this.megnyitasToolStripMenuItem.Click += new System.EventHandler(this.megnyitasToolStripMenuItem_Click);
             // 
             // bezarasToolStripMenuItem
             // 
             this.bezarasToolStripMenuItem.Name = "bezarasToolStripMenuItem";
-            this.bezarasToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.bezarasToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.bezarasToolStripMenuItem.Text = "Kérdésbank bezárása";
             this.bezarasToolStripMenuItem.Click += new System.EventHandler(this.bezarasToolStripMenuItem_Click);
             // 
             // kilepesToolStripMenuItem
             // 
             this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.kilepesToolStripMenuItem.Text = "Kilépés";
             this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
             // 
@@ -89,19 +90,19 @@
             this.documentationToolStripMenuItem,
             this.infoToolStripMenuItem});
             this.segítségToolStripMenuItem.Name = "segítségToolStripMenuItem";
-            this.segítségToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.segítségToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.segítségToolStripMenuItem.Text = "Segítség";
             // 
             // documentationToolStripMenuItem
             // 
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.documentationToolStripMenuItem.Text = "Dokumentáció";
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.infoToolStripMenuItem.Text = "Információ";
             // 
             // openFileDialog1
@@ -124,7 +125,7 @@
             this.WorkPanel.RowCount = 2;
             this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.WorkPanel.Size = new System.Drawing.Size(474, 288);
+            this.WorkPanel.Size = new System.Drawing.Size(466, 277);
             this.WorkPanel.TabIndex = 1;
             // 
             // MainForm
@@ -133,9 +134,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(474, 312);
+            this.ClientSize = new System.Drawing.Size(466, 301);
             this.Controls.Add(this.WorkPanel);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Form1";

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Kikerdezo
 {
@@ -35,6 +36,7 @@ namespace Kikerdezo
 
             this.Hide();
             this.Dock = DockStyle.Fill;
+            labelTestResult.Hide();
         }
         public void UpdateView()
         {
@@ -45,6 +47,8 @@ namespace Kikerdezo
         {
             Qbank = B;
             groupBoxTimer.Hide();
+            tableTest.Hide();
+            tableTest.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
         }
 
         // Test preparation ---------------------------------------------------------
@@ -81,7 +85,17 @@ namespace Kikerdezo
         private void CalculateResult()
         {
             TestCorrectAnswers = 0;
-            UpdateTestTable(true);
+
+            //UpdateTestTable(true);
+
+            string CorrAnsPercent = ((double)TestCorrectAnswers / (double)TestQNum * 100.0).ToString("F2", CultureInfo.CreateSpecificCulture("hu-HU"));
+            string Result = "A teszt véget ért. A helyes válaszok száma : {0}/{1} - ({2} %)";
+            Result = string.Format(Result, TestCorrectAnswers.ToString(),TestQNum, CorrAnsPercent);
+
+            labelTestResult.Text = Result;
+            labelTestResult.Show();
+
+            
         }
 
         private void timerTest_Tick(object sender, EventArgs e)
@@ -112,12 +126,17 @@ namespace Kikerdezo
             timerTest.Enabled = true;
             timerTest.Start();
 
+            TimeSpan result = TimeSpan.FromSeconds(CountDown);
+            string TimeString = result.ToString("mm':'ss");
+
             groupBoxTimer.Show();
+            labelTestResult.Hide();
 
         }
         private void bEnd_Click(object sender, EventArgs e)
         {
             timerTest.Stop();
+            timerTest.Enabled = false;
             CalculateResult();
         }
 
@@ -125,9 +144,14 @@ namespace Kikerdezo
         private void AddTestlabel(String text, int col, int row)
         {
             GrowLabel label = new GrowLabel();
-            label.Dock = DockStyle.Fill;
+            label.AutoSize = true;
+            label.Location = new System.Drawing.Point(5, 0);            
             label.Text = text;
             label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label.Anchor = AnchorStyles.Left;
+            label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label.MaximumSize = new System.Drawing.Size(200, 0);
+            
             tableTest.Controls.Add(label, col, row);
         }
         private TextBox CreateMultilineTextBox(string s)
@@ -138,11 +162,15 @@ namespace Kikerdezo
             textBox1.ScrollBars = ScrollBars.Vertical;
             textBox1.WordWrap = true;
 
-            textBox1.Height = 100;
-            textBox1.Anchor = AnchorStyles.None;
+            textBox1.Location = new System.Drawing.Point(15, 0);
 
+            textBox1.Height = 90;
+            textBox1.Width = 180;
+            textBox1.Anchor = AnchorStyles.None;
+            
             textBox1.Name = s;
 
+            textBox1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             return textBox1;
         }
 
@@ -154,7 +182,7 @@ namespace Kikerdezo
            Megold.AutoSize = true;
            Megold.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
            Megold.Location = new System.Drawing.Point(6, 28);
-           Megold.MaximumSize = new System.Drawing.Size(425, 0);
+           Megold.MaximumSize = new System.Drawing.Size(175, 0);
            Megold.Name = "Megold";
            Megold.Size = new System.Drawing.Size(54, 17);
            Megold.TabIndex = 1;           
@@ -162,12 +190,14 @@ namespace Kikerdezo
            // Groupbox  formatting ------------------------------------------
            G.AutoSize = true;
            G.Controls.Add(Megold);
-           G.Location = new System.Drawing.Point(38, 399);
+           G.Location = new System.Drawing.Point(15, 0);
            G.Name = "megoldBox";
-           G.Size = new System.Drawing.Size(425, 96);
+           G.Size = new System.Drawing.Size(180, 90);
            G.TabIndex = 7;
            G.TabStop = false;
            G.Text = "megoldBox";
+           G.MaximumSize = new System.Drawing.Size(180,0);
+           G.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
 
 
            Megold.Text = RightAnswer; //Show correct answer
@@ -189,20 +219,33 @@ namespace Kikerdezo
 
         }
 
-        private void UpdateTestTable(bool ResultShown)
+        private void UpdateTestTable(bool TestEnd)
         {
+            tableTest.Hide();
             tableTest.Controls.Clear();
 
             for (int i = 0; i < TestQNum; i++)
             {
 
                 string s;
-                s = Qbank.Questions.ElementAt(i).QAK[0];            // First coloumn : Question
+                s = TestPool.ElementAt(i).QAK[0];            // First coloumn : Question
                 AddTestlabel(s, 0, i);
 
-                TextBox T = CreateMultilineTextBox(i.ToString());   // Second coloumn : User answer in textbox
+                TextBox T = new TextBox();
+                if (!TestEnd)
+                {
+                    T = CreateMultilineTextBox(TestPool.ElementAt(i).QID.ToString());   // Second coloumn : User answer in textbox
 
-                AnswerPool.Add(T);
+                    AnswerPool.Add(T);
+                }
+                else
+                {
+                                                                // If Update is called after a test, Answerpool already created
+                }
+                {
+                    T = AnswerPool.ElementAt(i);
+                }
+
                 tableTest.Controls.Add(T, 1, i);
 
                 string UsrAns = AnswerPool.ElementAt(i).Text;
@@ -210,11 +253,13 @@ namespace Kikerdezo
                 string KeyWrd = TestPool.ElementAt(i).QAK[2];
 
                 GroupBox GrB = CreateRightAnswerBox(UsrAns, RgtAns, KeyWrd);   // Third coloumn : answercheck (only shown after the test)
-                if (ResultShown) GrB.Show();
+                if (TestEnd) GrB.Show();
                 else GrB.Hide();
 
                 tableTest.Controls.Add(GrB, 2, i);
             }
+
+            tableTest.Show();
         }
 
     }
