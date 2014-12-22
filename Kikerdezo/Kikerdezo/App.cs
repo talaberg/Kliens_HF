@@ -15,22 +15,26 @@ namespace Kikerdezo
         private static List<Control> DocViews;     // Used views are registered here
         private int ActiveView = 0;
         
-        private QuestionBank CurrentQBank = null; // Currently used quiestion bank object
+        private QuestionBank CurrentQBank; // Currently used quiestion bank object
 
         public static App Instance
         {
             get { return theApp; }
         }
-
+        public bool AcitvityExists
+        {
+            get { return CurrentQBank != null; }
+        }
         public static void Initialize(MainForm form)
         {
             DocViews = new List<Control>();
 
             theApp = new App();
             theApp.AppMainForm = form;
+
         }
 
-        public void NewActivity(string fileName)
+        public void NewActivity(string fileName,bool FileExists)
         {
             if (CurrentQBank != null)
             {
@@ -38,9 +42,11 @@ namespace Kikerdezo
             }
 
             CurrentQBank = new QuestionBank();
+
             try
             {
-                CurrentQBank.OpenQuestionBank(fileName);    // Open questionbank
+                if (FileExists) CurrentQBank.OpenQuestionBank(fileName);    // Open questionbank
+                else            CurrentQBank.CreateQuestionBank();
 
                 EditorView E = new EditorView();            // Create and init new editor view
                 E.Initialize(ref CurrentQBank);
@@ -74,6 +80,13 @@ namespace Kikerdezo
             {
                 MessageBox.Show("A fájl sérült, vagy használatban van!");
                 CurrentQBank = null;
+            }
+        }
+        public void SaveActivity(string FilePath, bool DefaultFilePath)
+        {
+            if (CurrentQBank != null)
+            {
+                CurrentQBank.SaveQuestionBank(FilePath, DefaultFilePath);
             }
         }
         public void CloseActivity()

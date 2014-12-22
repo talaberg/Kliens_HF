@@ -138,17 +138,24 @@ namespace Kikerdezo
 
         private void addButton(object sender, EventArgs e)
         {
-            if(NewQuestion.Any())
+            if (NewQuestion.ElementAt(0).Text.Any() && NewQuestion.ElementAt(1).Text.Any() && NewQuestion.ElementAt(2).Text.Any())
             {
-                QuestionEntry NewQ = new QuestionEntry();
-                List<string> s = new List<string>();
-                s.Add(NewQuestion.ElementAt(0).Text);
-                s.Add(NewQuestion.ElementAt(1).Text);
-                s.Add(NewQuestion.ElementAt(2).Text);
+                if (NewQuestion.Any())
+                {
+                    QuestionEntry NewQ = new QuestionEntry();
+                    List<string> s = new List<string>();
+                    s.Add(NewQuestion.ElementAt(0).Text);
+                    s.Add(NewQuestion.ElementAt(1).Text);
+                    s.Add(NewQuestion.ElementAt(2).Text);
 
-                NewQ.QAK = s;
+                    NewQ.QAK = s;
 
-                Qbank.AddQuestion(NewQ);
+                    Qbank.AddQuestion(NewQ);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Minden mező kitöltése kötelező!");
             }
         }
         private TextBox CreateMultilineTextBox(string s)
@@ -159,7 +166,8 @@ namespace Kikerdezo
             textBox1.ScrollBars = ScrollBars.Vertical;
             textBox1.WordWrap = true;
 
-            textBox1.Height = 100;
+            textBox1.Height = 90;
+            textBox1.Width = 180;
             textBox1.Anchor = AnchorStyles.None;
 
             textBox1.Name = s;

@@ -14,21 +14,20 @@ namespace Kikerdezo
     {
         private int CurrentQ;// Az aktuálisan megjelenítendő kérdés
         private QuestionBank Qbank;// A kérdés bank, amiből dolgozunk
+
         
         public BrowseView()
         {
             InitializeComponent();
             this.Hide();
-            this.Dock = DockStyle.Fill;
+            this.Dock = DockStyle.Fill;            
 
         }
         public void Initialize(ref QuestionBank B)
         {
             this.Qbank = B;
             CurrentQ = 0;
-            Kerdes.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[0];
-            Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
-            megoldBox.Hide();
+            Update();
         }
         public void UpdateView()
         {
@@ -47,11 +46,27 @@ namespace Kikerdezo
 
         private void Next_Click(object sender, EventArgs e)
         {
-            if (CurrentQ < Qbank.Questions.Count - 1)
-            {
-                CurrentQ += 1;
-                UpdateView();
+            if (checkBoxRand.Checked)
+            {                
+                Random r = new Random();
+                int NextQ = r.Next(Qbank.Questions.Count);
+                if (NextQ == CurrentQ)
+                {
+                    if (CurrentQ < Qbank.Questions.Count - 1) CurrentQ++;
+                    else if (CurrentQ > 0) CurrentQ--;
+                }
+                else CurrentQ = NextQ;
             }
+            else 
+            {
+                if (CurrentQ < Qbank.Questions.Count - 1)
+                {
+                    CurrentQ++;
+                    
+                }
+            }
+
+            UpdateView();
             
         }
 
@@ -59,25 +74,44 @@ namespace Kikerdezo
         {
             if (CurrentQ > 0)
             {
-                CurrentQ -= 1;
+                CurrentQ--;
                 UpdateView();
             }
         }
 
         private void elkuld_Click(object sender, EventArgs e)
         {
-            if (AnswerCheck.IsRightAnswer(Valasz.Text, Qbank.Questions.ElementAt(CurrentQ).QAK[2]))
+            if (Qbank.Questions.Any())
             {
-                megoldBox.Text = "Helyes válasz!";
-                megoldBox.BackColor = Color.Green;
-                megoldBox.Show();
+                if (AnswerCheck.IsRightAnswer(Valasz.Text, Qbank.Questions.ElementAt(CurrentQ).QAK[2]))
+                {
+                    megoldBox.Text = "Helyes válasz!";
+                    megoldBox.BackColor = Color.Green;
+                    megoldBox.Show();
+                }
+                else
+                {
+                    megoldBox.Text = "Helytelen válasz!";
+                    megoldBox.BackColor = Color.Red;
+                    megoldBox.Show();
+                }
+            }
+        }
+
+        private void checkBoxRand_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxRand.Checked)
+            {
+                Random r = new Random();
+                CurrentQ = r.Next(Qbank.Questions.Count);
+
+                buttonPrevious.Hide();
             }
             else
             {
-                megoldBox.Text = "Helytelen válasz!";
-                megoldBox.BackColor = Color.Red;
-                megoldBox.Show();
+                buttonPrevious.Show();
             }
         }
+
     }
 }

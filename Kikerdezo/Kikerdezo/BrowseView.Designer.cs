@@ -31,10 +31,11 @@
             this.Kerdes = new System.Windows.Forms.Label();
             this.Megold = new System.Windows.Forms.Label();
             this.Valasz = new System.Windows.Forms.TextBox();
-            this.Next = new System.Windows.Forms.Button();
-            this.Previous = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonPrevious = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.elkuld = new System.Windows.Forms.Button();
+            this.checkBoxRand = new System.Windows.Forms.CheckBox();
+            this.buttonElkuld = new System.Windows.Forms.Button();
             this.megoldBox = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.megoldBox.SuspendLayout();
@@ -73,46 +74,58 @@
             this.Valasz.Size = new System.Drawing.Size(425, 87);
             this.Valasz.TabIndex = 2;
             // 
-            // Next
+            // buttonNext
             // 
-            this.Next.Location = new System.Drawing.Point(108, 56);
-            this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(75, 23);
-            this.Next.TabIndex = 3;
-            this.Next.Text = "Next";
-            this.Next.UseVisualStyleBackColor = true;
-            this.Next.Click += new System.EventHandler(this.Next_Click);
+            this.buttonNext.Location = new System.Drawing.Point(172, 56);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(75, 23);
+            this.buttonNext.TabIndex = 3;
+            this.buttonNext.Text = "Next";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.Next_Click);
             // 
-            // Previous
+            // buttonPrevious
             // 
-            this.Previous.Location = new System.Drawing.Point(17, 56);
-            this.Previous.Name = "Previous";
-            this.Previous.Size = new System.Drawing.Size(75, 23);
-            this.Previous.TabIndex = 4;
-            this.Previous.Text = "Previous";
-            this.Previous.UseVisualStyleBackColor = true;
-            this.Previous.Click += new System.EventHandler(this.Previous_Click);
+            this.buttonPrevious.Location = new System.Drawing.Point(22, 56);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
+            this.buttonPrevious.TabIndex = 4;
+            this.buttonPrevious.Text = "Előző";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.Previous_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Next);
-            this.groupBox1.Controls.Add(this.Previous);
+            this.groupBox1.Controls.Add(this.checkBoxRand);
+            this.groupBox1.Controls.Add(this.buttonNext);
+            this.groupBox1.Controls.Add(this.buttonPrevious);
             this.groupBox1.Location = new System.Drawing.Point(38, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(277, 96);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kérdés léptetése";
             // 
-            // elkuld
+            // checkBoxRand
             // 
-            this.elkuld.Location = new System.Drawing.Point(493, 283);
-            this.elkuld.Name = "elkuld";
-            this.elkuld.Size = new System.Drawing.Size(75, 23);
-            this.elkuld.TabIndex = 6;
-            this.elkuld.Text = "Elküld";
-            this.elkuld.UseVisualStyleBackColor = true;
-            this.elkuld.Click += new System.EventHandler(this.elkuld_Click);
+            this.checkBoxRand.AutoSize = true;
+            this.checkBoxRand.Location = new System.Drawing.Point(126, 19);
+            this.checkBoxRand.Name = "checkBoxRand";
+            this.checkBoxRand.Size = new System.Drawing.Size(136, 17);
+            this.checkBoxRand.TabIndex = 5;
+            this.checkBoxRand.Text = "Véletlenszerű kérdések";
+            this.checkBoxRand.UseVisualStyleBackColor = true;
+            this.checkBoxRand.CheckedChanged += new System.EventHandler(this.checkBoxRand_CheckedChanged);
+            // 
+            // buttonElkuld
+            // 
+            this.buttonElkuld.Location = new System.Drawing.Point(493, 283);
+            this.buttonElkuld.Name = "buttonElkuld";
+            this.buttonElkuld.Size = new System.Drawing.Size(75, 23);
+            this.buttonElkuld.TabIndex = 6;
+            this.buttonElkuld.Text = "Elküld";
+            this.buttonElkuld.UseVisualStyleBackColor = true;
+            this.buttonElkuld.Click += new System.EventHandler(this.elkuld_Click);
             // 
             // megoldBox
             // 
@@ -130,13 +143,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.megoldBox);
-            this.Controls.Add(this.elkuld);
+            this.Controls.Add(this.buttonElkuld);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Valasz);
             this.Controls.Add(this.Kerdes);
             this.Name = "BrowseView";
             this.Size = new System.Drawing.Size(654, 596);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.megoldBox.ResumeLayout(false);
             this.megoldBox.PerformLayout();
             this.ResumeLayout(false);
@@ -149,10 +163,11 @@
         private System.Windows.Forms.Label Kerdes;
         private System.Windows.Forms.Label Megold;
         private System.Windows.Forms.TextBox Valasz;
-        private System.Windows.Forms.Button Next;
-        private System.Windows.Forms.Button Previous;
+        private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button elkuld;
+        private System.Windows.Forms.Button buttonElkuld;
         private System.Windows.Forms.GroupBox megoldBox;
+        private System.Windows.Forms.CheckBox checkBoxRand;
     }
 }

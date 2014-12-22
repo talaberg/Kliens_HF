@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Kikerdezo
         /// </summary>
         private List<QuestionEntry> QuestionEntries;
         private List<QView> Views;
-
+        private string QFilePath;
         /// <summary>
         /// Returns with the whole Question bank.
         /// </summary>
@@ -33,16 +34,17 @@ namespace Kikerdezo
             {
             }
         }
-        public static void CreateQuestionBank()
-        {
-            throw new System.NotImplementedException();
-        }
+        public void CreateQuestionBank()
+        { }
 
-        public void OpenQuestionBank(string fileName)
+        public void OpenQuestionBank(string filePath)
         {
            /* try
             {*/
-            var reader = new StreamReader(File.OpenRead(fileName), Encoding.GetEncoding("iso-8859-2")); // Fájl megnyitása
+            if (filePath.EndsWith(".csv", true, CultureInfo.CreateSpecificCulture("hu-HU")))
+            {
+                var reader = new StreamReader(File.OpenRead(filePath), Encoding.GetEncoding("iso-8859-2")); // Fájl megnyitása
+                QFilePath = filePath;
 
                 try
                 {
@@ -78,12 +80,57 @@ namespace Kikerdezo
                 {
                     reader.Dispose();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Hibás fájlformátum! Próbálkozz egy .csv fájlal!");
+            }
            /* }
             catch
             {
                 MessageBox.Show("Hiba a fájl megnyitása közben!");
             }*/
             
+        }
+        public void SaveQuestionBank(string fileName, bool DefaultFilePath)
+        {
+            string SaveDest;
+            if (DefaultFilePath) SaveDest = QFilePath;
+            else SaveDest = fileName;
+
+            if (!File.Exists(SaveDest))
+            {
+                File.Create(SaveDest).Close();
+            }
+            else
+            {                
+                File.Delete(SaveDest);
+            }
+            string delimiter = ";";
+
+            string[][] output = new string[QuestionEntries.Count()][];
+            for (int i = 0; i < output.Length; i++) 
+            {
+                output[i] = new string[3];
+            }
+            ;
+            for (int i = 0; i < QuestionEntries.Count(); i++)
+            {
+                output[i][0] = Questions.ElementAt(i).QAK[0];
+                output[i][1] = Questions.ElementAt(i).QAK[1];
+                output[i][2] = Questions.ElementAt(i).QAK[2];
+            }
+
+            int length = output.GetLength(0);
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < length; i++)
+            {
+                sb.AppendLine(string.Join(delimiter, output[i]));
+            }
+
+            File.AppendAllText(SaveDest, sb.ToString(), Encoding.GetEncoding("iso-8859-2"));
+
         }
 
         public void AddQuestion(QuestionEntry Q)

@@ -22,6 +22,9 @@ namespace Kikerdezo
         private int TestTime;
         private int CountDown;
         private int TestQNum;
+
+        private bool TestActive;
+        private bool TestEnded;
         public TestView()
         {
             TestPool = new List<QuestionEntry>();
@@ -37,6 +40,9 @@ namespace Kikerdezo
             this.Hide();
             this.Dock = DockStyle.Fill;
             labelTestResult.Hide();
+
+            TestActive = false;
+            TestEnded = false;
         }
         public void UpdateView()
         {
@@ -86,7 +92,7 @@ namespace Kikerdezo
         {
             TestCorrectAnswers = 0;
 
-            //UpdateTestTable(true);
+            UpdateTestTable(true);
 
             string CorrAnsPercent = ((double)TestCorrectAnswers / (double)TestQNum * 100.0).ToString("F2", CultureInfo.CreateSpecificCulture("hu-HU"));
             string Result = "A teszt véget ért. A helyes válaszok száma : {0}/{1} - ({2} %)";
@@ -102,9 +108,9 @@ namespace Kikerdezo
         {
             if (--CountDown <= 0)
             {
-                timerTest.Stop();
+                
                 labelTimer.Text = "00:00";
-                CalculateResult();
+                EndTest();
             }
             else
             {
@@ -117,27 +123,52 @@ namespace Kikerdezo
 
         private void bTestStart_Click(object sender, EventArgs e)
         {
-            PrepareTest();
+            if (Qbank.Questions.Any())
+            {
+                if (!TestActive)
+                {
+                    PrepareTest();
 
-            CountDown = Convert.ToInt32(numSetTestTime.Value);
-            TestTime = Convert.ToInt32(numSetTestTime.Value);
+                    CountDown = Convert.ToInt32(numSetTestTime.Value);
+                    TestTime = Convert.ToInt32(numSetTestTime.Value);
 
-            timerTest.Interval = 1000;
-            timerTest.Enabled = true;
-            timerTest.Start();
+                    timerTest.Interval = 1000;
+                    timerTest.Enabled = true;
+                    timerTest.Start();
 
-            TimeSpan result = TimeSpan.FromSeconds(CountDown);
-            string TimeString = result.ToString("mm':'ss");
+                    TimeSpan result = TimeSpan.FromSeconds(CountDown);
+                    string TimeString = result.ToString("mm':'ss");
+                    labelTimer.Text = TimeString;
 
-            groupBoxTimer.Show();
-            labelTestResult.Hide();
+                    groupBoxTimer.Show();
+                    labelTestResult.Hide();
+
+                    TestActive = true;
+                    TestEnded = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Jelenleg a kérdésbank üres. Adj hozzá kérdéseket, vagy tölts be egy másikat!");
+            }
 
         }
         private void bEnd_Click(object sender, EventArgs e)
         {
+            if (!TestEnded && TestActive)
+            {
+                EndTest();
+            }
+        }
+
+        private void EndTest()
+        {
             timerTest.Stop();
             timerTest.Enabled = false;
             CalculateResult();
+            
+            TestActive = false;
+            TestEnded = true;
         }
 
         // Supplementary functions --------------------------------------------------
