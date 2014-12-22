@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -40,9 +41,14 @@ namespace Kikerdezo
             this.Hide();
             this.Dock = DockStyle.Fill;
             labelTestResult.Hide();
+            panelDiagram.Hide();
 
             TestActive = false;
             TestEnded = false;
+        }
+        public Panel DiagramPanel
+        {
+            get { return panelDiagram; }
         }
         public void UpdateView()
         {
@@ -95,11 +101,14 @@ namespace Kikerdezo
             UpdateTestTable(true);
 
             string CorrAnsPercent = ((double)TestCorrectAnswers / (double)TestQNum * 100.0).ToString("F2", CultureInfo.CreateSpecificCulture("hu-HU"));
-            string Result = "A teszt véget ért. A helyes válaszok száma : {0}/{1} - ({2} %)";
+            string Result = "A teszt véget ért. A helyes válaszok száma : {0}/{1} ({2} %)";
             Result = string.Format(Result, TestCorrectAnswers.ToString(),TestQNum, CorrAnsPercent);
 
             labelTestResult.Text = Result;
             labelTestResult.Show();
+            panelDiagram.Show();
+
+            
 
             
         }
@@ -142,6 +151,7 @@ namespace Kikerdezo
 
                     groupBoxTimer.Show();
                     labelTestResult.Hide();
+                    panelDiagram.Hide();
 
                     TestActive = true;
                     TestEnded = false;
@@ -293,5 +303,17 @@ namespace Kikerdezo
             tableTest.Show();
         }
 
+        public void draw(Graphics g)
+        {
+            Brush PieBrush = new SolidBrush(Color.Green);
+            Brush EllipseBrush = new SolidBrush(Color.Red);
+            Rectangle r = new Rectangle(0,0,100,100);
+            
+
+            float AngleSweep = (float)TestCorrectAnswers / (float)TestQNum;
+            AngleSweep = AngleSweep * (float)360;
+            g.FillEllipse(EllipseBrush,r);
+            g.FillPie(PieBrush, r, 90, AngleSweep);
+        }
     }
 }

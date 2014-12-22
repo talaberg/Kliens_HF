@@ -1,0 +1,557 @@
+Mi az AuxR processzor regiszter szerepe?;AuxR: Auxiliary Register, 16 bites érték felsõ bitjének átmeneti tárolására, külsõ buszról beolvasáskor;felsõ, bit, tárolás, külsõ, busz, beolvasás
+Mire való a „RAM_init.vh” fájl, mi hozza létre?;Az EPMP_Prog_Minta.xls hozza létre. Ez inicializálja a RAM-ot, a programkódban megadottak szerint;inicializál, RAM
+Mi a közös egy-egy utasításcsoporton belül?;Funkcionálisan hasonló mûveletek. Az állapotgépben hasonló utat járnak be (de nem feltétlenül ugyanazt, pl.: JMP, JMPC);funkcionális, hasonló
+die Abteilung;osztály;osztály
+das Angebot;ajánlat;ajánlat
+die Anzeige;kijelzõ;kijelzõ
+die Couch;kanapé;kanapé
+der Einwohner;népesség;népesség
+das Erdgeschoss;földszint;földszint
+die Farbe;szín;szín
+das Gespräch;beszélgetés;beszélgetés
+das Glas;üveg;üveg
+die Größe;méret;méret
+die Hälfte;fél;fél
+die Haupstadt;fõváros;fõváros
+der Haushalt;háztartás;háztartás
+die Kosmetik;kozmetikum;kozmetikum
+die Küche;konyha;konyha
+der Kunde;vásárló;vásárló
+die Million;millió;millió
+das Möbelstück;bútordarab;bútordarab
+die Notiz;jegyzet;jegyzet
+der Preis;ár;ár
+das Prozent;százalék;százalék
+der Quadratkilometer;négyzetkilométer;négyzetkilométer
+das Sonderangebot;különleges ajánlat;különleges ajánlat
+der Stock;szint/emelet;szint/emelet
+die Stunde;óra;óra
+der Teil;része;része
+der Topf;edény;edény
+das Viertel;negyed(ik);negyed(ik)
+die Währung;valuta;valuta
+die Werbung;hirdetés;hirdetés
+die Zeitschrift;magazin;magazin
+der Zustand;állam;állam
+ausgeben;költeni;költeni
+bekommen;kapni;kapni
+brauchen;szükségeltetik/kell;szükségeltetik/kell
+finden;találni;találni
+funktionieren;funkcionálni;funkcionálni
+kaufen;megvesz;megvesz
+kosten;kerülni;kerülni
+sammeln;gyûjteni;gyûjteni
+schauen;nézni;nézni
+stimmen;stimmelni;stimmelni
+verkaufen;eladni;eladni
+wechseln;váltani;váltani
+andere;más;más
+bequem;kényelmes;kényelmes
+billig;olcsó;olcsó
+egal;egyformák;egyformák
+einfach;éppen;éppen
+gebraucht;használt;használt
+günstig;kedvezõ;kedvezõ
+interessant;érdekes;érdekes
+jung;fiatal;fiatal
+krank;beteg;beteg
+langweilig;unalmas;unalmas
+modern;modern;modern
+nett;szép;szép
+praktisch;praktikus;praktikus
+schlecht;rossz;rossz
+schön;szép;szép
+super;szuper;szuper
+teuer;drága;drága
+toll;nagy;nagy
+wenige;kevés;kevés
+aber;de;de
+auf Wiederhören;viszlát;viszlát
+da hinten;vissza;vissza
+dann;akkor;akkor
+da vorne;elöl;elöl
+dort;ott;ott
+erst;csak;csak
+fast;majdnem;majdnem
+gar nicht teuer;nem drága;nem drága
+ganz hübsch;nagyon csinos;nagyon csinos
+genauso viele;annyi;annyi
+leider;sajnos;sajnos
+nächst;következõ;következõ
+na klar;na világos;na világos
+oft;gyakran;gyakran
+ohne;nélkül;nélkül
+paar;pár;pár
+recht haben;Rögtön;Rögtön
+warum?;miért?;miért?
+wieder;újra;újra
+wieso?;Miért?;Miért?
+wie viel?;mennyi?;mennyi?
+wie viele?;mennyi?;mennyi?
+circa;kb;kb
+zu groß;túl nagy;túl nagy
+"""Ohne ein Wort""";"""Szó nélkül""";"""Szó nélkül"""
+lächelt;mosolyog(ni);mosolyog(ni)
+Lieblingsfarbe;kedvenc szín;kedvenc szín
+rot;piros;piros
+zufrieden;elégedett;elégedett
+wieder;újra;újra
+Tüte;zacskó/tasak;zacskó/tasak
+Geld;pénz;pénz
+viel;sok;sok
+deshalb;ezért;ezért
+gefäult;tetszik;tetszik
+scauen (+dat);nézni;nézni
+das Obst;gyümölcs;gyümölcs
+das Gemüse;zöldségek;zöldségek
+das Fleisch;hús;hús
+das Milchprodukte;tejtermék;tejtermék
+die Backware;sütött ételek;sütött ételek
+das Getränke;italok;italok
+die Tiefkühlkost;Fagyasztott élelmiszer;Fagyasztott élelmiszer
+die Traube;szõlõ;szõlõ
+der Apfel;alma;alma
+der Pfirsich;õszibarack;õszibarack
+die Aprikose;kajszibarack;kajszibarack
+die Erdbeere;eper;eper
+die Kirsche;cseresznye;cseresznye
+die Karotte;sárgarépa;sárgarépa
+die Zwiebel;hagyma;hagyma
+die Erbse;borsó;borsó
+die Kartoffel;burgonya;burgonya
+die Gurke;uborka;uborka
+die Wurst;kolbász/virsli;kolbász/virsli
+der Fisch;hal;hal
+der Schinken;sonka;sonka
+das Rindersteak;marhasült;marhasült
+das Hähnchen;csirke;csirke
+der Sauerrahm;tejföl;tejföl
+(die Saure sahne);(tejföl);(tejföl)
+die Milch;tej;tej
+die Butter;vaj;vaj
+das Eis;fagyi;fagyi
+die Sahne;tejszín;tejszín
+der Quark;túró;túró
+der Topfen;túró;túró
+das Brot;kenyér;kenyér
+der Semmel;kenyér;kenyér
+das Hörnchen;kifli;kifli
+der Kipfel;kifli;kifli
+der Krapfen;fánk;fánk
+das Mineralwasser;ásványvíz;ásványvíz
+der Wein;bor;bor
+das Bier;sör;sör
+der Saft;gyümölcslé;gyümölcslé
+der Schnaps;pálinka;pálinka
+die Meeresfrüchte;tengeri gyümölcs;tengeri gyümölcs
+das Eis;fagyi;fagyi
+die Pizza;pizza;pizza
+das Maronenpüree;gesztenyepüré;gesztenyepüré
+die Frucht,-¨e;gyümölcs;gyümölcs
+das Mehl;liszt;liszt
+der Zucker;cukor;cukor
+das Salz;só;só
+das Gewürz,-e;fûszer;fûszer
+das Öl;olaj;olaj
+das Backpulver;sütõpor;sütõpor
+der Pudding;puding;puding
+das Müsli;müzli;müzli
+der Senf;mustár;mustár
+die Mayonnaise;majonéz;majonéz
+die Teigwaren;tészta;tészta
+die Nudel,-n;tészta;tészta
+die Spaghetti;spagetti;spagetti
+der Reis;rizs;rizs
+die Birne;körte;körte
+die Orange;narancs;narancs
+der Kohl / das Kraut;káposzta;káposzta
+die Tomate;paradicsom;paradicsom
+paprika;bors;bors
+konzerv;konzerv;konzerv
+Es freut mich;örvendek;örvendek
+Wie bitte?;Tessék?;Tessék?
+Und Sie?;És magát?;És magát?
+der Name, -n;név;név
+der Vorname, -n;keresztnév;keresztnév
+der Familienname, -n;családnév;családnév
+der Familie, -n;család;család
+der Rufname, -n;becenév;becenév
+der Spitzname, -n;gúnynév;gúnynév
+Wie heißen Sie?;Hogy hívják?;Hogy hívják?
+Woher kommen Sie?;Hova valósi vagy?;Hova valósi vagy?
+kommen;jönni;jönni
+Woher;honnan;honnan
+auch;szintén, ugyancsak;szintén, ugyancsak
+Wo;hol;hol
+wohnen;lakni;lakni
+die Straße;utca;utca
+Guten Morgen!;Jó reggelt!;Jó reggelt!
+der Morgen;reggel;reggel
+Guten Tag!;Jó napot!;Jó napot!
+der Tag, -e;nap;nap
+Guten Abend!;Jó estét!;Jó estét!
+der Abend, -e;este;este
+Gute Nacht!;Jó éjszakát!;Jó éjszakát!
+die Nacht, -e;éjszaka;éjszaka
+Grüß dich!;Szervusz!;Szervusz!
+Auf Wiedersehen!;Viszontlátásra;Viszontlátásra
+Tschüs!;(közvetlenebb elköszönés);(közvetlenebb elköszönés)
+Willkommen!;Üdvözlöm! / Legyen üdvözölve!;Üdvözlöm! / Legyen üdvözölve!
+der Flughafen, -;reptér;reptér
+der Hafen, -;kikötõ;kikötõ
+der Flug, -e;szállni;szállni
+das Flugzeug, -e;repülõ;repülõ
+Wie geht es Ihnen;Hogy van Ön?;Hogy van Ön?
+gehen;menni;menni
+Wie geht es dir?;Hogy van?;Hogy van?
+Danke gut/prima/fantastisch/sehr gut;Köszönöm jól.;Köszönöm jól.
+Nicht gut.;Nem jól.;Nem jól.
+Nicht so gut.;Nem olyan jól.;Nem olyan jól.
+hören;hallgatni;hallgatni
+sprechen;beszélni;beszélni
+die Lektion, -en;lecke;lecke
+markieren;jelölni;jelölni
+der Dialog, -e;dialógus;dialógus
+das Bild, -es;kép;kép
+ergänzen A;kiegészíteni;kiegészíteni
+vergleichen;összehasonlítani;összehasonlítani
+noch;még;még
+einmal;egyszer;egyszer
+der Pass, -e;útlevél;útlevél
+Wie ist Ihr Name;Mi a neve?;Mi a neve?
+Wer sind Sie?;Ön kicsoda?;Ön kicsoda?
+Wie heißt du?;Hogy hívnak?;Hogy hívnak?
+Wer bist du?;Ki vagy te?;Ki vagy te?
+Wie ist dein Name?;Mi a neved?;Mi a neved?
+die Reise, -n;utazás;utazás
+die Reisegruppe, -n;utascsoport;utascsoport
+das Reisebüro;utazási iroda;utazási iroda
+der Herr, -en;úr;úr
+die Frau;nõ/asszony;nõ/asszony
+das Fräulein;kisasszony;kisasszony
+die Kneipe, -n;kocsma;kocsma
+sagen;mondani;mondani
+die Laute (Pl);emberek;emberek
+ordnen;rendezni;rendezni
+antworten;válaszolni;válaszolni
+der Tourist, -en;túrista;túrista
+machen;csinálni;csinálni
+Entschuldigen Sie;Bocsásson meg;Bocsásson meg
+Entschuldigung;Bocsánat;Bocsánat
+suchen;keresni;keresni
+Da sind Sie hier richtig;Jó helyen jár;Jó helyen jár
+spät;kesõ;kesõ
+Jetzt;most;most
+alle;mindenki;mindenki
+buchstabieren;betûzni;betûzni
+schokolade;csokoládé;csokoládé
+sänger;énekes;énekes
+das Alphabet;ábécé;ábécé
+die Begrüßung;üdvözlés;üdvözlés
+siezen;magázni;magázni
+höflich;udvarias;udvarias
+formell;formális;formális
+leben;élni;élni
+dein;tied;tied
+möchten;lenne;lenne
+der kontinent, -en;kontinens;kontinens
+"das Land, -""er";ország;ország
+aus;-ból, bõl;-ból, bõl
+in;-ban, ben;-ban, ben
+nach;-ba, be;-ba, be
+schon;már;már
+seit;óta;óta
+beim;-nál,nél;-nál,nél
+Jahr, -e;év;év
+die Stadt;város;város
+der Kellner, -in;pincér;pincér
+der Fahrer, -in;sofõr;sofõr
+der Flugbegleiter -in;légiutas-kisérõ;légiutas-kisérõ
+der Arzt, die ärztine;orvos;orvos
+der Pilot, -in;pilóta;pilóta
+der Friseur, -in;fodrász;fodrász
+der Ingenieur, -in;mérnök;mérnök
+der Lehrer, -in;tanár;tanár
+der Polizist -in;rendõr;rendõr
+der Verkäufer -in;eladó;eladó
+die Zahl, -en;szám;szám
+eins;egy;egy
+zwei;kettõ;kettõ
+drei;három;három
+vier;négy;négy
+fünf;öt;öt
+sechs;hat;hat
+sieben;hét;hét
+acht;nyolc;nyolc
+neun;kilenc;kilenc
+zehn;tíz;tíz
+elf;tizenegy;tizenegy
+zölf;tizenkettõ;tizenkettõ
+dreizehn;tizenhárom;tizenhárom
+zwanzig;húsz;húsz
+einundzwanzing;huszonegy;huszonegy
+dreißig;harminc;harminc
+vierzig;negyven;negyven
+einhundert;száz;száz
+eintausend;ezer;ezer
+die Nummer;szám;szám
+das Rätsel;rejtvény;rejtvény
+das Wort;szó;szó
+das/der Taxi;takszi;takszi
+die Frage;kérdés;kérdés
+die Übung;gyakorlás;gyakorlás
+das Radio;rádijó;rádijó
+laden;meghívni;meghívni
+helfen;segíteni;segíteni
+Vielleicht;talán;talán
+zu Besuch bei;látogatóban lenni vkinél;látogatóban lenni vkinél
+am Flughafen sein;repülõtéren van;repülõtéren van
+zu Hause sein;otthon lenni;otthon lenni
+Wohnungstür;lakásajtó;lakásajtó
+glauben;tudni;tudni
+denken;hinni;hinni
+Wann sind Sie geboren?;Mikor született?;Mikor született?
+Wann bist du geboren?;Mikor születtél?;Mikor születtél?
+Ich bin 1992 geboren.;1992-ben születtem.;1992-ben születtem.
+Wo sind Sie geboren?;Hol született?;Hol született?
+Wo bist du geboren?;Hol születtél?;Hol születtél?
+Icb bin in X geboren.;X helyen születtem.;X helyen születtem.
+das Geburtsdatum;születési dátum;születési dátum
+das Geburtsort;születési hely;születési hely
+die Staatsangehörigheit;állampolgárság;állampolgárság
+Welche Staats haben Sie?;Mi az állampolgárságod?;Mi az állampolgárságod?
+Das Alter;életkor;életkor
+Wie alt sind Sie?;MI az életkorod?;MI az életkorod?
+die Familie;család;család
+der Familienstand;családi állapot;családi állapot
+Wie ist Ihr Familienstand?;Mi a családi állapota?;Mi a családi állapota?
+Wie ist dein Familienstand?;Mi a családi állapotod?;Mi a családi állapotod?
+ledig;egyedülálló;egyedülálló
+verheiratet;házas;házas
+verwitwet;özvegy;özvegy
+geschieden;elvált;elvált
+das Kind, -er;gyerek;gyerek
+Haben SIe eine Familie?;Van családja?;Van családja?
+Ich habe keine Kinder;Nincs gyerekem.;Nincs gyerekem.
+der Gewinn;nyeremény;nyeremény
+verliebt;szerelmes;szerelmes
+Keine Ahnung!;Fogalmam sincs!;Fogalmam sincs!
+viele;sok;sok
+Wie viele Kinder hat XY?;Milyen sok/Mennyi gyereke van XY-nak?;Milyen sok/Mennyi gyereke van XY-nak?
+Wohnung;lakás;lakás
+neu;új;új
+"""per du""";tegezõdni;tegezõdni
+kennen;ismer;ismer
+nehmen;kérni;kérni
+Wohnzimmer;nappali;nappali
+der Mantel;kabát;kabát
+hübsch;csinos/helyes;csinos/helyes
+wirklich;tényleg;tényleg
+Hier entlang;Erre gyertek/Kezdje itt;Erre gyertek/Kezdje itt
+Wie lange wohnst du schon hier?;Mióta laksz itt?;Mióta laksz itt?
+nämlich;ugyanis;ugyanis
+Zettel;cetli;cetli
+stehen;áll;áll
+Zucker;cukor;cukor
+Milch;tej;tej
+der Couchtisch;dohányzóasztal;dohányzóasztal
+der Stehlampe;állólámpa;állólámpa
+der Fernseher;TV;TV
+die Woche;hét;hét
+immer;mindig;mindig
+doch;de igen;de igen
+jede;minden;minden
+diese(r);ezt;ezt
+klingelen;csöngetni;csöngetni
+der Fehler;hiba;hiba
+gleich;ugyanaz;ugyanaz
+links;balra;balra
+rechts;jobbra;jobbra
+bestimmen;meghatározni;meghatározni
+raten;tanácsolni;tanácsolni
+der Dialog, -e;dialógus;dialógus
+das Bild, -er;kép;kép
+das Lied, -er;dal;dal
+der Lesetext, -e;olvasó;olvasó
+lesen;olvasni;olvasni
+das Rap;rep;rep
+die Zahl, -en;szám;szám
+die Regel, -n;szabály;szabály
+der bestimmte Artikel;határozott névelõ;határozott névelõ
+oben;fent;fent
+unten;lent;lent
+in der Mitte;középen;középen
+links;bal;bal
+rechts;jobbra;jobbra
+langsam;lassan;lassan
+der Mäntel;kabát;kabát
+erst;csak;csak
+Volkshochschule;fõiskola;fõiskola
+die Speise, -n;étel;étel
+der Hamburger;hamburger;hamburger
+der/das Wiener Schnitzel;bécsiszelet;bécsiszelet
+der Fleisch;hús;hús
+der Frankfurter;virsli;virsli
+die Wurst;virsli;virsli
+die Suppe;leves;leves
+die Sachertorte;Sacher torta;Sacher torta
+die Pommes frites;sültkrumpli;sültkrumpli
+die Pizza;pizza;pizza
+der Käse;sajt;sajt
+der Salat;saláta;saláta
+essen;enni;enni
+das Getränk;ital;ital
+das Wasser;víz;víz
+die Cola;kóla;kóla
+das Bier;sör;sör
+der Wein (Weißwein, Rotwein);bor (fehérbor, vörösbor);bor (fehérbor, vörösbor)
+der Kaffe;kávé;kávé
+der Tee;tea;tea
+der Apfelsaft;almalé;almalé
+der Orangensaft;narancslé;narancslé
+trinken;inni;inni
+die Tasse;csésze;csésze
+der Teller;tányér;tányér
+Paar;pár;pár
+das Hähnchen;csirke;csirke
+das Brot;kenyér;kenyér
+der Schinken;sonka;sonka
+das Ei, -er;tojás;tojás
+das Eis;fagyi;fagyi
+der Kuchen;sütemény;sütemény
+das Stück;szelet;szelet
+das Glas;pohár;pohár
+der Krug;korsó;korsó
+die Flasche;üveg;üveg
+die Tüte;zacskó;zacskó
+die Schachtel;doboz;doboz
+die Packung;csomag;csomag
+der Löffel;kanál;kanál
+die Gabel;villa;villa
+das Messer;kés;kés
+bestellen;rendelni;rendelni
+bekommen;kapni (kérni);kapni (kérni)
+der Senf;mustár;mustár
+bezahlen;fizetni;fizetni
+Stimmt so?;Stimmel?;Stimmel?
+wünschen;kívánni;kívánni
+der Kühlschrank;Hûtõgép;Hûtõgép
+das Telefon;telefon;telefon
+das Geräte;eszköz;eszköz
+der Haushalt;háztartás;háztartás
+der CD-Spieler;CD lejátszó;CD lejátszó
+das Radio;rádió;rádió
+der Ofen;sütõ;sütõ
+der Herd;tûzhely;tûzhely
+die Mikrowell;mikrohullámúsütõ;mikrohullámúsütõ
+der Geschürrspüler;mosogatógép;mosogatógép
+die Spülmaschine;mosogatógép;mosogatógép
+der Computer;számítógép;számítógép
+der Staubsauger;porszívó;porszívó
+das Bügeleisen;vasaló;vasaló
+viele;sok;sok
+wenige;kevés;kevés
+fast;majdnem;majdnem
+jedem;minden;minden
+etwa genauso viele;körülbelül ugyanolyan sokan;körülbelül ugyanolyan sokan
+bequem;kényelmes;kényelmes
+praktisch;praktikus;praktikus
+super;szuper;szuper
+ganz (schön);egész (szép);egész (szép)
+hübsch;helyes;helyes
+schön;szép;szép
+toll;klassz;klassz
+interessant;érdekes;érdekes
+langweilig;unalmas;unalmas
+billig;olcsó;olcsó
+schlecht;rossz;rossz
+günstig;kedvezõ (ár);kedvezõ (ár)
+groß;nagy;nagy
+teuer;drága;drága
+farbenfroh;színes;színes
+das Möbel;bútor;bútor
+das Möbelstück;bútor;bútor
+das Sofa;kanapé;kanapé
+das Bett;ágy;ágy
+das Fernser;ablak;ablak
+das Regal,-e;polc;polc
+das Bücherregal;könyvespolc;könyvespolc
+die Lampe,-n;lámpa;lámpa
+die Stehlampe,-n;állólámpa;állólámpa
+die Tür,-en;ajtó;ajtó
+die Vase,-en;váza;váza
+die Schublade,-en;fiók;fiók
+die Couch;kanapé;kanapé
+der Tisch,-e;asztal;asztal
+der Stuhl,-e;szék;szék
+der Sessel;fotel;fotel
+der Schrank,-e;szekrény;szekrény
+der Ofen;sütõ;sütõ
+der Herd;tûzhely;tûzhely
+der Teppich;szõnyeg;szõnyeg
+der Vorhang,-e;függöny;függöny
+der Spiegel;tükör;tükör
+der Kleiderhaken;ruhaakasztó fogas;ruhaakasztó fogas
+der Gebrauchtwagen;használt áru;használt áru
+alle;mind;mind
+fast;szinte mind;szinte mind
+viele;sok;sok
+drei viertel;háromnegyed;háromnegyed
+ber die Hälfte;több mint a fele;több mint a fele
+die Hälfte;fél;fél
+ein Drittel;egyharmad;egyharmad
+ein Zehntel;egytized;egytized
+Niemand;senki;senki
+beobachten;nézni;nézni
+stehen;állni;állni
+Süßigkeiten;cukorka;cukorka
+vor;elõtt;elõtt
+Kaugummis;Rágógumi;Rágógumi
+Schokoriegel;Csokoládé rúd;Csokoládé rúd
+oben;felett;felett
+Gummibärchen;gumicukor;gumicukor
+unten;alatt;alatt
+Überraschungseier;Meglepetés tojás;Meglepetés tojás
+schon;már;már
+los;le;le
+leute;emberek;emberek
+schauen;nézni;nézni
+aber;de;de
+bleiben;maradni;maradni
+hart;kemény;kemény
+essen;enni;enni
+hören;hallgatni;hallgatni
+freundliche;baráti;baráti
+stimmen;egyetérteni;egyetérteni
+Nachbarin;szomszéd;szomszéd
+unsere;mi;mi
+Chance;véletlen;véletlen
+beim;amikor;amikor
+neunten;kilencedik;kilencedik
+Tränen;sír;sír
+möchte;szeretnék;szeretnék
+schreit;határ;határ
+weint;sír;sír
+Tochter;lánya;lánya
+Niemand;senki;senki
+Sogar;még;még
+flüstert;suttog;suttog
+bisschen;kicsit;kicsit
+lauter;tiszta;tiszta
+machen;teszik;teszik
+kaufen;megvesz;megvesz
+werbung;hirdetés;hirdetés
+Geschichte;történelem;történelem
+dem;a;a
+für;számára;számára
+heute;ma;ma
+gemein;közös;közös
+dann;akkor;akkor
+gefällen;elesni??;elesni??
+bisschen;kicsit;kicsit
+Warum;Miért;Miért
+immer;mindig;mindig
+tränen;sír;sír
+gibt;vannak;vannak
+stellen;állítani;állítani
+blumen;virág;virág

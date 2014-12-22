@@ -76,7 +76,7 @@ namespace Kikerdezo
         }
         private void Addlabel(String text, int col, int row)
         {
-            GrowLabel label = new GrowLabel();
+            Label label = new Label();
             label.Dock = DockStyle.Fill;
             label.Text = text;
             label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,7 +106,7 @@ namespace Kikerdezo
                 b.Text = "Törlés";
                 b.Anchor = AnchorStyles.None;
                 b.Click += new System.EventHandler(this.deleteButton);
-                tableLayoutPanel.Controls.Add(b, 3, i+1);                
+                tableLayoutPanel.Controls.Add(b, 3, i+1);              
             }
             TextBox t = CreateMultilineTextBox("NewQuestion");
             NewQuestion.Add(t);
@@ -119,12 +119,12 @@ namespace Kikerdezo
             t = CreateMultilineTextBox("NewKeyword");
             NewQuestion.Add(t);
             tableLayoutPanel.Controls.Add(t, 2, i + 1);            
-
+            
             Button a = new Button();                    // Place an add button
             a.Text = "Hozzáadás";
             a.Anchor = AnchorStyles.None;
             a.Click += new System.EventHandler(this.addButton);
-            tableLayoutPanel.Controls.Add(a, 3, i + 1); 
+            tableLayoutPanel.Controls.Add(a, 3, i + 1);
 
             tableLayoutPanel.Show();
         }

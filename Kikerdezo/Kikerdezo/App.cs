@@ -25,6 +25,7 @@ namespace Kikerdezo
         {
             get { return CurrentQBank != null; }
         }
+
         public static void Initialize(MainForm form)
         {
             DocViews = new List<Control>();
@@ -48,6 +49,9 @@ namespace Kikerdezo
                 if (FileExists) CurrentQBank.OpenQuestionBank(fileName);    // Open questionbank
                 else            CurrentQBank.CreateQuestionBank();
 
+                
+                MainMenu M = new MainMenu();
+                App.Instance.AppMainForm.GetWorkPanel.Controls.Add(M, 1, 0);
                 EditorView E = new EditorView();            // Create and init new editor view
                 E.Initialize(ref CurrentQBank);
                 E.Name = "Edit";
@@ -69,7 +73,8 @@ namespace Kikerdezo
                 TestView T = new TestView();            // Create and init new test view
                 T.Initialize(ref CurrentQBank);
                 T.Name = "Test";
-
+                CurrentQBank.QTestView = T;
+                
                 DocViews.Add(T);                            //Register in DocViews
                 CurrentQBank.AttachView(T);                 //Register in QBank interface
                 AppMainForm.GetWorkPanel.Controls.Add(T, 1, 1); //Add to main form controls

@@ -15,6 +15,7 @@ namespace Kikerdezo
         /// </summary>
         private List<QuestionEntry> QuestionEntries;
         private List<QView> Views;
+        private TestView QuestionTestView;
         private string QFilePath;
         /// <summary>
         /// Returns with the whole Question bank.
@@ -23,6 +24,7 @@ namespace Kikerdezo
         {
             QuestionEntries = new List<QuestionEntry>();
             Views = new List<QView>();
+            
         }
         public List<QuestionEntry> Questions
         {
@@ -32,6 +34,13 @@ namespace Kikerdezo
             }
             set
             {
+            }
+        }
+        public TestView QTestView
+        {
+            get { return QuestionTestView; }
+            set { QuestionTestView = value;
+            QuestionTestView.DiagramPanel.Paint += new PaintEventHandler(control_Paint);
             }
         }
         public void CreateQuestionBank()
@@ -167,6 +176,11 @@ namespace Kikerdezo
         {
             foreach (QView view in Views)
                 view.UpdateView();
+        }
+
+        private void control_Paint(object sender, PaintEventArgs e)
+        {
+            QuestionTestView.draw(e.Graphics);
         }
 
     }

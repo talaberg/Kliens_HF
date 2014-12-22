@@ -21,8 +21,7 @@ namespace Kikerdezo
 
 
 
-            MainMenu M = new MainMenu();
-            WorkPanel.Controls.Add(M, 1, 0);
+
             WorkPanel.Hide();
 
             // Létrehozzunk az alkalmazás objektumot.
@@ -78,7 +77,7 @@ namespace Kikerdezo
         {
             if (App.Instance.AcitvityExists)
             {
-                saveFileDialog1.Filter = "CSV fájlok | *.csv";
+                saveFileDialog1.Filter = "CSV fájl | *.csv";
                 saveFileDialog1.DefaultExt = "csv";
                 saveFileDialog1.RestoreDirectory = true;
                 saveFileDialog1.CheckFileExists = false;

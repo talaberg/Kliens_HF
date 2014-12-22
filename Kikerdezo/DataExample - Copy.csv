@@ -1,3 +1,0 @@
-Mi az AuxR processzor regiszter szerepe?;AuxR: Auxiliary Register, 16 bites érték felsõ bitjének átmeneti tárolására, külsõ buszról beolvasáskor;felsõ, bit, tárolás, külsõ, busz, beolvasás
-Mire való a „RAM_init.vh” fájl, mi hozza létre?;Az EPMP_Prog_Minta.xls hozza létre. Ez inicializálja a RAM-ot, a programkódban megadottak szerint;inicializál, RAM
-Mi a közös egy-egy utasításcsoporton belül?;Funkcionálisan hasonló mûveletek. Az állapotgépben hasonló utat járnak be (de nem feltétlenül ugyanazt, pl.: JMP, JMPC);funkcionális, hasonló

@@ -24,6 +24,7 @@ namespace Kikerdezo
         private IContainer components;
         private TableLayoutPanel tableTest;
         private Label labelTestResult;
+        private Panel panelDiagram;
         private Button bEnd;
 
         
@@ -44,6 +45,7 @@ namespace Kikerdezo
             this.labelTimer = new System.Windows.Forms.Label();
             this.tableTest = new System.Windows.Forms.TableLayoutPanel();
             this.labelTestResult = new System.Windows.Forms.Label();
+            this.panelDiagram = new System.Windows.Forms.Panel();
             this.groupBoxTestParam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetQnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSetTestTime)).BeginInit();
@@ -139,7 +141,7 @@ namespace Kikerdezo
             // 
             this.groupBoxTimer.Controls.Add(this.bEnd);
             this.groupBoxTimer.Controls.Add(this.labelTimer);
-            this.groupBoxTimer.Location = new System.Drawing.Point(463, 19);
+            this.groupBoxTimer.Location = new System.Drawing.Point(468, 19);
             this.groupBoxTimer.Name = "groupBoxTimer";
             this.groupBoxTimer.Size = new System.Drawing.Size(152, 128);
             this.groupBoxTimer.TabIndex = 1;
@@ -176,7 +178,7 @@ namespace Kikerdezo
             this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableTest.Location = new System.Drawing.Point(37, 245);
+            this.tableTest.Location = new System.Drawing.Point(37, 275);
             this.tableTest.Name = "tableTest";
             this.tableTest.RowCount = 2;
             this.tableTest.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -188,23 +190,31 @@ namespace Kikerdezo
             // 
             this.labelTestResult.AutoSize = true;
             this.labelTestResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelTestResult.Location = new System.Drawing.Point(51, 180);
+            this.labelTestResult.Location = new System.Drawing.Point(23, 182);
             this.labelTestResult.Name = "labelTestResult";
             this.labelTestResult.Size = new System.Drawing.Size(147, 20);
             this.labelTestResult.TabIndex = 4;
             this.labelTestResult.Text = "A teszt véget ért.";
+            // 
+            // panelDiagram
+            // 
+            this.panelDiagram.Location = new System.Drawing.Point(517, 153);
+            this.panelDiagram.Name = "panelDiagram";
+            this.panelDiagram.Size = new System.Drawing.Size(100, 100);
+            this.panelDiagram.TabIndex = 5;
             // 
             // TestView
             // 
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.panelDiagram);
             this.Controls.Add(this.tableTest);
             this.Controls.Add(this.labelTestResult);
             this.Controls.Add(this.groupBoxTimer);
             this.Controls.Add(this.groupBoxTestParam);
             this.Name = "TestView";
-            this.Size = new System.Drawing.Size(618, 248);
+            this.Size = new System.Drawing.Size(623, 278);
             this.groupBoxTestParam.ResumeLayout(false);
             this.groupBoxTestParam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetQnum)).EndInit();
