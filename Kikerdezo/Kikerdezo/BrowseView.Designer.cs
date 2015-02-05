@@ -38,6 +38,7 @@
             this.buttonElkuld = new System.Windows.Forms.Button();
             this.megoldBox = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableImages = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.megoldBox.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -98,11 +99,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.checkBoxRand);
             this.groupBox1.Controls.Add(this.buttonNext);
             this.groupBox1.Controls.Add(this.buttonPrevious);
-            this.groupBox1.Location = new System.Drawing.Point(177, 15);
+            this.groupBox1.Location = new System.Drawing.Point(146, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(277, 96);
             this.groupBox1.TabIndex = 5;
@@ -136,14 +136,16 @@
             this.megoldBox.Controls.Add(this.Megold);
             this.megoldBox.Location = new System.Drawing.Point(29, 388);
             this.megoldBox.Name = "megoldBox";
-            this.megoldBox.Size = new System.Drawing.Size(425, 96);
+            this.megoldBox.Size = new System.Drawing.Size(425, 100);
             this.megoldBox.TabIndex = 7;
             this.megoldBox.TabStop = false;
             this.megoldBox.Text = "megoldBox";
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.tableImages);
             this.panel1.Controls.Add(this.megoldBox);
             this.panel1.Controls.Add(this.buttonElkuld);
             this.panel1.Controls.Add(this.groupBox1);
@@ -151,16 +153,36 @@
             this.panel1.Controls.Add(this.Kerdes);
             this.panel1.Location = new System.Drawing.Point(12, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 524);
+            this.panel1.Size = new System.Drawing.Size(562, 516);
             this.panel1.TabIndex = 8;
+            // 
+            // tableImages
+            // 
+            this.tableImages.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tableImages.AutoScroll = true;
+            this.tableImages.AutoSize = true;
+            this.tableImages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableImages.ColumnCount = 2;
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableImages.Location = new System.Drawing.Point(38, 513);
+            this.tableImages.MinimumSize = new System.Drawing.Size(400, 0);
+            this.tableImages.Name = "tableImages";
+            this.tableImages.RowCount = 2;
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableImages.Size = new System.Drawing.Size(400, 0);
+            this.tableImages.TabIndex = 8;
             // 
             // BrowseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.panel1);
             this.Name = "BrowseView";
-            this.Size = new System.Drawing.Size(654, 596);
+            this.Size = new System.Drawing.Size(577, 533);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.megoldBox.ResumeLayout(false);
@@ -168,6 +190,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -183,5 +206,6 @@
         private System.Windows.Forms.GroupBox megoldBox;
         private System.Windows.Forms.CheckBox checkBoxRand;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableImages;
     }
 }

@@ -166,7 +166,7 @@ namespace Kikerdezo
         {
             tableLayoutPanel.Hide();
             tableLayoutPanel.Controls.Clear();
-            
+            NewQuestion.Clear();
 
             Addlabel("Kérdés", 0, 0);
             Addlabel("Válasz", 1, 0);
@@ -218,6 +218,7 @@ namespace Kikerdezo
             DeleteButton b = sender as DeleteButton;
 
             Qbank.RmvQuestion(b.QID);
+
             
         }
 

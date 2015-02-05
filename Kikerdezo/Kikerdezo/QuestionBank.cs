@@ -125,8 +125,14 @@ namespace Kikerdezo
             ;
             for (int i = 0; i < QuestionEntries.Count(); i++)
             {
+                string ImgPath = "";
                 output[i][0] = Questions.ElementAt(i).QAK[0];
-                output[i][1] = Questions.ElementAt(i).QAK[1];
+                
+                for (int j = 0; j < Questions.ElementAt(i).AnsImages.Count; j++)
+                {
+                    ImgPath += ("@" + Questions.ElementAt(i).AnsImages.ElementAt(j) + "@");
+                }
+                output[i][1] = Questions.ElementAt(i).QAK[1] + ImgPath;
                 output[i][2] = Questions.ElementAt(i).QAK[2];
             }
 
