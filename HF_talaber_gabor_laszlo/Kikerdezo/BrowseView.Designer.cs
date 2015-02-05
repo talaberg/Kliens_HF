@@ -82,7 +82,7 @@
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 3;
-            this.buttonNext.Text = "Következő";
+            this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.Next_Click);
             // 

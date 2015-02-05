@@ -26,7 +26,7 @@ namespace Kikerdezo
             Views = new List<QView>();
             
         }
-        public List<QuestionEntry> Questions
+        public List<QuestionEntry> Questions    //Question entry property
         {
             get
             {
@@ -36,7 +36,7 @@ namespace Kikerdezo
             {
             }
         }
-        public TestView QTestView
+        public TestView QTestView   // The TestView of the question bank is given to register its paint event 
         {
             get { return QuestionTestView; }
             set { QuestionTestView = value;
@@ -46,7 +46,7 @@ namespace Kikerdezo
         public void CreateQuestionBank()
         { }
 
-        public void OpenQuestionBank(string filePath)
+        public void OpenQuestionBank(string filePath)   //Open
         {
            /* try
             {*/
@@ -101,7 +101,7 @@ namespace Kikerdezo
             }*/
             
         }
-        public void SaveQuestionBank(string fileName, bool DefaultFilePath)
+        public void SaveQuestionBank(string fileName, bool DefaultFilePath) //Save
         {
             string SaveDest;
             if (DefaultFilePath) SaveDest = QFilePath;
@@ -142,21 +142,17 @@ namespace Kikerdezo
 
         }
 
-        public void AddQuestion(QuestionEntry Q)
+        public void AddQuestion(QuestionEntry Q)    //Add new question
         {
             QuestionEntries.Add(Q);
             UpdateAllViews();
         }
 
-        public void RmvQuestion(Int64 ID)
+        public void RmvQuestion(Int64 ID)       //Remove a question
         {
             int Qindex = QuestionEntries.FindIndex(x => x.QID == ID);
             QuestionEntries.RemoveAt(Qindex);
             UpdateAllViews();
-        }
-        public static void SaveQuestionBank()
-        {
-            throw new System.NotImplementedException();
         }
 
         public void AttachView(QView v)
@@ -168,10 +164,7 @@ namespace Kikerdezo
         {
             Views.Remove(v);
         }
-        public void SwitchView(int index)
-        {
-            //Views.ElementAt(ActiveViewIndex).
-        }
+
         protected void UpdateAllViews()
         {
             foreach (QView view in Views)

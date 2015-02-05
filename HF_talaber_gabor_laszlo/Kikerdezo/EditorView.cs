@@ -12,11 +12,11 @@ namespace Kikerdezo
 {
     public class EditorView : UserControl, QView
     {
-        private TableLayoutPanel tableLayoutPanel;
+        private TableLayoutPanel tableLayoutPanel;  //Editor view elements
         private QuestionBank Qbank;
         private NumericUpDown numericKerdesSorszam;
         private GroupBox groupBoxKerdesSorszam;
-        private Button buttonMutasd;// A kérdés bank, amiből dolgozunk
+        private Button buttonMutasd;
         List<TextBox> NewQuestion;
         private Button buttonNext10;
         private Button buttonPrev10;
@@ -33,7 +33,7 @@ namespace Kikerdezo
             NewQuestion = new List<TextBox>();
             Qbank = B;            
         }
-        public void UpdateView()
+        public void UpdateView()    // Update editor view
         {
             this.numericKerdesSorszam.Maximum = new decimal(new int[] {Qbank.Questions.Count,0,0,0});
             UpdateTable();
@@ -154,7 +154,7 @@ namespace Kikerdezo
         {
             
         }
-        private void Addlabel(String text, int col, int row)
+        private void Addlabel(String text, int col, int row)// supplementary function: adds a new label, with the given text to the given position
         {
             Label label = new Label();
             label.Dock = DockStyle.Fill;
@@ -162,7 +162,7 @@ namespace Kikerdezo
             label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             tableLayoutPanel.Controls.Add(label, col, row);
         }
-        private void UpdateTable()
+        private void UpdateTable() // supplementary function: Updates the tableLayoutPanel
         {
             tableLayoutPanel.Hide();
             tableLayoutPanel.Controls.Clear();
@@ -213,7 +213,7 @@ namespace Kikerdezo
 
             tableLayoutPanel.Show();
         }
-        private void deleteButton(object sender, EventArgs e)
+        private void deleteButton(object sender, EventArgs e) // A delete button is pressed --> delete that row and its question entry
         {
             DeleteButton b = sender as DeleteButton;
 
@@ -221,7 +221,7 @@ namespace Kikerdezo
             
         }
 
-        private void addButton(object sender, EventArgs e)
+        private void addButton(object sender, EventArgs e)// add button is pressed --> add new QuestionEntry
         {
             if (NewQuestion.ElementAt(0).Text.Any() && NewQuestion.ElementAt(1).Text.Any() && NewQuestion.ElementAt(2).Text.Any())
             {
@@ -239,11 +239,11 @@ namespace Kikerdezo
                 }
             }
             else
-            {
+            {                                             // Empty cell found
                 MessageBox.Show("Minden mező kitöltése kötelező!");
             }
         }
-        private TextBox CreateMultilineTextBox(string s)
+        private TextBox CreateMultilineTextBox(string s) // Supplementary function: Creates a textbox, with multiple line
         {
             TextBox textBox1 = new TextBox();
             
@@ -260,7 +260,7 @@ namespace Kikerdezo
             return textBox1;
         }
 
-        private void buttonMutasd_Click(object sender, EventArgs e)
+        private void buttonMutasd_Click(object sender, EventArgs e) // Switch page
         {
             if((QuestionStartingNum - 1) != Convert.ToInt32(numericKerdesSorszam.Value))
             {
@@ -269,7 +269,7 @@ namespace Kikerdezo
             }
         }
 
-        private void buttonPrev10_Click(object sender, EventArgs e)
+        private void buttonPrev10_Click(object sender, EventArgs e) //Shows the next 10 QuestionEntry
         {
             if (QuestionStartingNum != 0)
             {
@@ -286,7 +286,7 @@ namespace Kikerdezo
             }
         }
 
-        private void buttonNext10_Click(object sender, EventArgs e)
+        private void buttonNext10_Click(object sender, EventArgs e) //Shows the previous 10 QuestionEntry
         {
             if (QuestionStartingNum != Qbank.Questions.Count - 1)
             {

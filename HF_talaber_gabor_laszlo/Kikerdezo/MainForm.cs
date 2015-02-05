@@ -113,7 +113,7 @@ namespace Kikerdezo
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Verzió: 1.0\n\nBoldog karácsonyt Barbi! :)");
+            MessageBox.Show("Készítette: Talabér Gábor László\n\nVerzió: 1.0\n\n");
         }
 
 

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Kikerdezo
 {
-    public class Result
+    public interface QView
     {
+        void UpdateView();
     }
 }

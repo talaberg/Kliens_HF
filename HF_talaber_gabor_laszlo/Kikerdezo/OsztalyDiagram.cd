@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Kikerdezo.QuestionBank">
-    <Position X="10.75" Y="1" Width="1.5" />
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>EgAIIAAAAEAAAAAAAIACCBAAJAAAIAAEAAAAQAAIAAA=</HashCode>
+      <HashCode>EgAIIAAAAEAAAAAAAIACABAAJAAAIAAEAAQAQAAIAAA=</HashCode>
       <FileName>QuestionBank.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -12,7 +17,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Kikerdezo.App">
-    <Position X="8.75" Y="1.25" Width="1.5" />
+    <Position X="8.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAIAAAAAAQEAAAAECAACCQQAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>App.cs</FileName>
@@ -22,14 +27,23 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kikerdezo.QuestionEntry">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAgAAAAAAAAAAAAAABAAAEAAAAAgAAgQA=</HashCode>
       <FileName>QuestionEntry.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kikerdezo.BrowseView">
-    <Position X="12.5" Y="3.5" Width="1.5" />
+    <Position X="12.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAgACQAIGCAAEQAQAASAAAACACwAAAAAACAAAQwAAAE=</HashCode>
       <FileName>BrowseView.cs</FileName>
@@ -37,7 +51,12 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Kikerdezo.TestView">
-    <Position X="16" Y="3.5" Width="1.5" />
+    <Position X="16" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>QEAEARoEGAEAAQSAAA6QAAACACYCABEAkCEAsRAgACA=</HashCode>
       <FileName>TestView.cs</FileName>
@@ -45,15 +64,26 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Kikerdezo.EditorView">
-    <Position X="14.25" Y="3.5" Width="1.5" />
+    <Position X="14.25" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AEAABQAAAgAAgQQAAASAABQCQKAAAAAAgQAAAAIAAAE=</HashCode>
       <FileName>EditorView.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="Kikerdezo.AnswerCheck">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>AnswerCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Kikerdezo.QView">
-    <Position X="14.25" Y="2" Width="1.5" />
+    <Position X="14.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>QView.cs</FileName>

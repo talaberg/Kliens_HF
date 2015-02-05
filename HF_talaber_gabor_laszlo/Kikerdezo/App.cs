@@ -21,7 +21,7 @@ namespace Kikerdezo
         {
             get { return theApp; }
         }
-        public bool AcitvityExists
+        public bool AcitvityExists          // Checks, if a Question bank already created or loaded
         {
             get { return CurrentQBank != null; }
         }
@@ -35,9 +35,9 @@ namespace Kikerdezo
 
         }
 
-        public void NewActivity(string fileName,bool FileExists)
+        public void NewActivity(string fileName,bool FileExists) // Starts a new activity
         {
-            if (CurrentQBank != null)
+            if (CurrentQBank != null)   // If a Question bank is opened, close it first
             {
                 CloseActivity();
             }
@@ -89,14 +89,14 @@ namespace Kikerdezo
                 CurrentQBank = null;
             }
         }
-        public void SaveActivity(string FilePath, bool DefaultFilePath)
+        public void SaveActivity(string FilePath, bool DefaultFilePath) // Saves the current Question bank
         {
             if (CurrentQBank != null)
             {
                 CurrentQBank.SaveQuestionBank(FilePath, DefaultFilePath);
             }
         }
-        public void CloseActivity()
+        public void CloseActivity() // Close opened Qbank
         {
             DocViews.Clear();
             ActiveView = 0;
@@ -104,7 +104,7 @@ namespace Kikerdezo
             AppMainForm.GetWorkPanel.Controls.Clear();
         }
 
-        public void SwitchView(string ViewName)
+        public void SwitchView(string ViewName) // Switch between views
         {
             int newActiveView = DocViews.FindIndex(x => x.Name == ViewName);
 
