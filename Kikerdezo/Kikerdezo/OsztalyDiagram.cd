@@ -1,112 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Kikerdezo.Activity">
-    <Position X="5" Y="3.25" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Activity.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Kikerdezo.Test">
-    <Position X="3.75" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAA=</HashCode>
-      <FileName>Test.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="TestResult" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Kikerdezo.Browse">
-    <Position X="6.25" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Browse.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Kikerdezo.QuestionBank">
-    <Position X="10.25" Y="1" Width="1.5" />
+    <Position X="10.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EgAAAAAAAEAAAAAAAAAACAAAIAAAIAAEAAQAQAAIAAA=</HashCode>
+      <HashCode>EgAIIAAAAEAAAAAAAIACCBAAJAAAIAAEAAAAQAAIAAA=</HashCode>
       <FileName>QuestionBank.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Field Name="QuestionEntries" />
       <Field Name="Views" />
+      <Property Name="Questions" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Kikerdezo.App">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="8.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAQEAAAAECAACCQAAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAIAAAAAAQEAAAAECAACCQQAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>App.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="CurrentQBank" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kikerdezo.Question">
-    <Position X="8.5" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAA=</HashCode>
-      <FileName>Question.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Kikerdezo.Answer">
-    <Position X="10.25" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAA=</HashCode>
-      <FileName>Answer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Kikerdezo.Keywords">
-    <Position X="12" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAA=</HashCode>
-      <FileName>Keywords.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Kikerdezo.QuestionEntry">
-    <Position X="10.25" Y="3.5" Width="1.5" />
+    <Position X="8.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgAAgAA=</HashCode>
+      <HashCode>AAAAAQAAAAAAgAAAAAAAAAAAAAABAAAEAAAAAgAAgQA=</HashCode>
       <FileName>QuestionEntry.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kikerdezo.ResultView">
-    <Position X="17.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ResultView.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Kikerdezo.Result">
-    <Position X="3.75" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Result.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Kikerdezo.WriteFile">
-    <Position X="3" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
-      <FileName>WriteFile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Kikerdezo.BrowseView">
-    <Position X="15.25" Y="3.5" Width="1.5" />
+    <Position X="12.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgQACAAAACAAEwAAAASAAAACACQAAAAAAAAAAAgAAAE=</HashCode>
+      <HashCode>AAgACQAIGCAAEQAQAASAAAACACwAAAAAACAAAQwAAAE=</HashCode>
       <FileName>BrowseView.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Kikerdezo.QView">
-    <Position X="14.5" Y="2" Width="1.5" />
+  <Class Name="Kikerdezo.TestView">
+    <Position X="16" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QEAEARoEGAEAAQSAAA6QAAACACYCABEAkCEAsRAgACA=</HashCode>
+      <FileName>TestView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Kikerdezo.EditorView">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAABQAAAgAAgQQAAASAABQCQKAAAAAAgQAAAAIAAAE=</HashCode>
+      <FileName>EditorView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Kikerdezo.QView">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>QView.cs</FileName>
     </TypeIdentifier>
   </Interface>

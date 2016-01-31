@@ -52,7 +52,7 @@ namespace Kikerdezo
         }
         public void UpdateView()
         {
-            
+            this.numSetQnum.Minimum = new decimal(new int[] {1, 0, 0, 0 });
             this.numSetQnum.Maximum = new decimal(new int[] {Qbank.Questions.Count, 0, 0, 0 });
         }
         public void Initialize(ref QuestionBank B)
@@ -239,6 +239,7 @@ namespace Kikerdezo
            G.Text = "megoldBox";
            G.MaximumSize = new System.Drawing.Size(180,0);
            G.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+           G.Dock = DockStyle.Fill;
 
 
            Megold.Text = RightAnswer; //Show correct answer

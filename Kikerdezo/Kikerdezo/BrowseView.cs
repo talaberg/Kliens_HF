@@ -35,13 +35,16 @@ namespace Kikerdezo
             {
                 Kerdes.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[0];
                 Megold.Text = Qbank.Questions.ElementAt(CurrentQ).QAK[1];
+                ImagesUpdate(Qbank.Questions.ElementAt(CurrentQ).AnsImages);
             }
             else
             {
                 Kerdes.Text = "A kérdésbank jelenleg üres...";
                 Megold.Text = "";
+                ImagesUpdate(new List<string>());
             }
             megoldBox.Hide();
+            tableImages.Hide();
         }
 
         private void Next_Click(object sender, EventArgs e)
@@ -88,12 +91,14 @@ namespace Kikerdezo
                     megoldBox.Text = "Helyes válasz!";
                     megoldBox.BackColor = Color.Green;
                     megoldBox.Show();
+                    tableImages.Show();
                 }
                 else
                 {
                     megoldBox.Text = "Helytelen válasz!";
                     megoldBox.BackColor = Color.Red;
                     megoldBox.Show();
+                    tableImages.Show();
                 }
             }
         }
@@ -111,6 +116,25 @@ namespace Kikerdezo
             {
                 buttonPrevious.Show();
             }
+        }
+
+        private void ImagesUpdate(List<string> Pathes)
+        {
+            tableImages.Controls.Clear();
+            if (Pathes.Count > 0)
+            {
+                for (int i = 0; i < Pathes.Count; i++)
+                {
+                    string Path = Pathes.ElementAt(i);
+                    PictureBox P = new PictureBox();
+                    Image I = Image.FromFile(Path);
+                    P.Image = I;
+                    P.MinimumSize = new Size(400, 200);
+                    P.SizeMode = PictureBoxSizeMode.Zoom;
+                    tableImages.Controls.Add(P, 0, i);
+                }
+            }
+            tableImages.AutoSize = true;
         }
 
     }

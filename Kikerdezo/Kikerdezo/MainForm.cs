@@ -13,16 +13,22 @@ namespace Kikerdezo
 {
     public partial class MainForm : Form
     {
+        private bool NewFile = false; 
         public MainForm()
         {
+            
             InitializeComponent();
             this.Width = 768;
             this.Height = 768;
 
-
+            //Icon myIcon = new Icon("Resources/icon.ico");
+            //this.Icon = myIcon;
 
 
             WorkPanel.Hide();
+
+            openFileDialog1.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+            saveFileDialog1.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
 
             // Létrehozzunk az alkalmazás objektumot.
             App.Initialize(this);
@@ -44,7 +50,8 @@ namespace Kikerdezo
             if (!e.Cancel)
             {
                 WorkPanel.Show();
-                App.Instance.NewActivity(openFileDialog1.FileName,true);           
+                App.Instance.NewActivity(openFileDialog1.FileName,true);
+                NewFile = false;
             }
         }
 
@@ -63,13 +70,21 @@ namespace Kikerdezo
         {
             WorkPanel.Show();
             App.Instance.NewActivity(null, false);
+            NewFile = true;
         }
 
         private void mentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (App.Instance.AcitvityExists)
+            if (NewFile)
             {
-                App.Instance.SaveActivity(null, true);
+                mentesMaskentToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                if (App.Instance.AcitvityExists)
+                {
+                    App.Instance.SaveActivity(null, true);
+                }
             }
         }
 
@@ -89,6 +104,16 @@ namespace Kikerdezo
         private void saveFileDialog1SavePressed(object sender, CancelEventArgs e)
         {
             App.Instance.SaveActivity(saveFileDialog1.FileName, false);
+        }
+
+        private void documentationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/10fLxB5Gjwg0d5TOSiqK3wsJtl8EDhmjWqbuWZVGgXEI");
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Verzió: 1.0\n\nBoldog karácsonyt Barbi! :)");
         }
 
 

@@ -33,6 +33,8 @@
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ujKerdesbankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.megnyitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mentesMaskentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bezarasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.segítségToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,8 +42,6 @@
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.WorkPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.mentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mentesMaskentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,20 @@
             this.megnyitasToolStripMenuItem.Text = "Kérdésbank megnyitása...";
             this.megnyitasToolStripMenuItem.Click += new System.EventHandler(this.megnyitasToolStripMenuItem_Click);
             // 
+            // mentesToolStripMenuItem
+            // 
+            this.mentesToolStripMenuItem.Name = "mentesToolStripMenuItem";
+            this.mentesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.mentesToolStripMenuItem.Text = "Mentés";
+            this.mentesToolStripMenuItem.Click += new System.EventHandler(this.mentesToolStripMenuItem_Click);
+            // 
+            // mentesMaskentToolStripMenuItem
+            // 
+            this.mentesMaskentToolStripMenuItem.Name = "mentesMaskentToolStripMenuItem";
+            this.mentesMaskentToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.mentesMaskentToolStripMenuItem.Text = "Mentés másként...";
+            this.mentesMaskentToolStripMenuItem.Click += new System.EventHandler(this.mentesMaskentToolStripMenuItem_Click);
+            // 
             // bezarasToolStripMenuItem
             // 
             this.bezarasToolStripMenuItem.Name = "bezarasToolStripMenuItem";
@@ -112,12 +126,14 @@
             this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
             this.documentationToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.documentationToolStripMenuItem.Text = "Dokumentáció";
+            this.documentationToolStripMenuItem.Click += new System.EventHandler(this.documentationToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.infoToolStripMenuItem.Text = "Információ";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -128,7 +144,6 @@
             // 
             this.WorkPanel.AutoScroll = true;
             this.WorkPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.WorkPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.WorkPanel.ColumnCount = 3;
             this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.WorkPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
@@ -141,20 +156,6 @@
             this.WorkPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.WorkPanel.Size = new System.Drawing.Size(592, 249);
             this.WorkPanel.TabIndex = 1;
-            // 
-            // mentesToolStripMenuItem
-            // 
-            this.mentesToolStripMenuItem.Name = "mentesToolStripMenuItem";
-            this.mentesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.mentesToolStripMenuItem.Text = "Mentés";
-            this.mentesToolStripMenuItem.Click += new System.EventHandler(this.mentesToolStripMenuItem_Click);
-            // 
-            // mentesMaskentToolStripMenuItem
-            // 
-            this.mentesMaskentToolStripMenuItem.Name = "mentesMaskentToolStripMenuItem";
-            this.mentesMaskentToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.mentesMaskentToolStripMenuItem.Text = "Mentés másként...";
-            this.mentesMaskentToolStripMenuItem.Click += new System.EventHandler(this.mentesMaskentToolStripMenuItem_Click);
             // 
             // saveFileDialog1
             // 

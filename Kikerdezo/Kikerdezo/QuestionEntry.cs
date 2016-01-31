@@ -21,6 +21,8 @@ namespace Kikerdezo
         /// </summary>
         private string Keywords;
 
+        List<string> Images;
+
         private Int64 ID;
         /// <summary>
         /// Returns with a Question-Answer-Keyword list (QAK)
@@ -28,6 +30,7 @@ namespace Kikerdezo
         public QuestionEntry()
         {
             ID = IDGenerator++;
+            Images = new List<string>();
         }
         public List<string> QAK
         {
@@ -37,6 +40,7 @@ namespace Kikerdezo
                 x.Add(Question);
                 x.Add(Answer);
                 x.Add(Keywords);
+                CropImages();
                 return x;
             }
             set
@@ -46,9 +50,47 @@ namespace Kikerdezo
                 Keywords = value.ElementAt(2);
             }
         }
+        public List<string> AnsImages
+        {
+            get
+            {
+                return Images;
+            }
+        }
         public Int64 QID
         {
             get { return ID; }
+        }
+
+        private void CropImages()
+        {
+            bool StringEnd = false;
+
+            while(!StringEnd) //Find @ chars
+            {
+                string s = Answer;
+                int index = s.IndexOf('@');
+
+                if((index != -1) && (index+1 < s.Length) )
+                {
+                    s = s.Substring(index+1);
+
+                    int end = s.IndexOf('@');
+                    if(end != -1)
+                    {
+                        Images.Add(s.Substring(0, end));
+
+                        Answer = 
+                            Answer.Substring(0, (index!=0 ? index : 0) ) +
+                            Answer.Substring(index + end + 2);
+                    }
+                }
+                else
+                {
+                    StringEnd = true;
+                }
+            }
+            StringEnd = true;
         }
     }
 }

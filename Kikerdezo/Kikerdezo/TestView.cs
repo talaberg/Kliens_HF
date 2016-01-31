@@ -25,6 +25,7 @@ namespace Kikerdezo
         private TableLayoutPanel tableTest;
         private Label labelTestResult;
         private Panel panelDiagram;
+        private Panel panel1;
         private Button bEnd;
 
         
@@ -46,10 +47,12 @@ namespace Kikerdezo
             this.tableTest = new System.Windows.Forms.TableLayoutPanel();
             this.labelTestResult = new System.Windows.Forms.Label();
             this.panelDiagram = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxTestParam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetQnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSetTestTime)).BeginInit();
             this.groupBoxTimer.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerTest
@@ -63,7 +66,7 @@ namespace Kikerdezo
             this.groupBoxTestParam.Controls.Add(this.labelQuestions);
             this.groupBoxTestParam.Controls.Add(this.numSetTestTime);
             this.groupBoxTestParam.Controls.Add(this.labelTestTime);
-            this.groupBoxTestParam.Location = new System.Drawing.Point(37, 19);
+            this.groupBoxTestParam.Location = new System.Drawing.Point(34, 16);
             this.groupBoxTestParam.Name = "groupBoxTestParam";
             this.groupBoxTestParam.Size = new System.Drawing.Size(401, 128);
             this.groupBoxTestParam.TabIndex = 0;
@@ -141,7 +144,7 @@ namespace Kikerdezo
             // 
             this.groupBoxTimer.Controls.Add(this.bEnd);
             this.groupBoxTimer.Controls.Add(this.labelTimer);
-            this.groupBoxTimer.Location = new System.Drawing.Point(468, 19);
+            this.groupBoxTimer.Location = new System.Drawing.Point(465, 16);
             this.groupBoxTimer.Name = "groupBoxTimer";
             this.groupBoxTimer.Size = new System.Drawing.Size(152, 128);
             this.groupBoxTimer.TabIndex = 1;
@@ -178,7 +181,7 @@ namespace Kikerdezo
             this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableTest.Location = new System.Drawing.Point(37, 275);
+            this.tableTest.Location = new System.Drawing.Point(52, 270);
             this.tableTest.Name = "tableTest";
             this.tableTest.RowCount = 2;
             this.tableTest.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -190,7 +193,7 @@ namespace Kikerdezo
             // 
             this.labelTestResult.AutoSize = true;
             this.labelTestResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelTestResult.Location = new System.Drawing.Point(23, 182);
+            this.labelTestResult.Location = new System.Drawing.Point(20, 179);
             this.labelTestResult.Name = "labelTestResult";
             this.labelTestResult.Size = new System.Drawing.Size(147, 20);
             this.labelTestResult.TabIndex = 4;
@@ -198,33 +201,45 @@ namespace Kikerdezo
             // 
             // panelDiagram
             // 
-            this.panelDiagram.Location = new System.Drawing.Point(517, 153);
+            this.panelDiagram.Location = new System.Drawing.Point(514, 150);
             this.panelDiagram.Name = "panelDiagram";
             this.panelDiagram.Size = new System.Drawing.Size(100, 100);
             this.panelDiagram.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.panelDiagram);
+            this.panel1.Controls.Add(this.tableTest);
+            this.panel1.Controls.Add(this.labelTestResult);
+            this.panel1.Controls.Add(this.groupBoxTimer);
+            this.panel1.Controls.Add(this.groupBoxTestParam);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(620, 289);
+            this.panel1.TabIndex = 6;
             // 
             // TestView
             // 
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.panelDiagram);
-            this.Controls.Add(this.tableTest);
-            this.Controls.Add(this.labelTestResult);
-            this.Controls.Add(this.groupBoxTimer);
-            this.Controls.Add(this.groupBoxTestParam);
+            this.Controls.Add(this.panel1);
             this.Name = "TestView";
-            this.Size = new System.Drawing.Size(623, 278);
+            this.Size = new System.Drawing.Size(623, 292);
             this.groupBoxTestParam.ResumeLayout(false);
             this.groupBoxTestParam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetQnum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSetTestTime)).EndInit();
             this.groupBoxTimer.ResumeLayout(false);
             this.groupBoxTimer.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
 
 
         

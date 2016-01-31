@@ -55,7 +55,7 @@ namespace Kikerdezo
                 EditorView E = new EditorView();            // Create and init new editor view
                 E.Initialize(ref CurrentQBank);
                 E.Name = "Edit";
-                E.Anchor = AnchorStyles.None;
+                E.Anchor = AnchorStyles.Top;
                 
 
                 DocViews.Add(E);                            // Register in DocViews
@@ -65,6 +65,7 @@ namespace Kikerdezo
                 BrowseView B = new BrowseView();            // Create and init new editor view
                 B.Initialize(ref CurrentQBank);
                 B.Name = "Browse";
+                B.Anchor = AnchorStyles.Top;
 
                 DocViews.Add(B);                            //Register in DocViews
                 CurrentQBank.AttachView(B);                 //Register in QBank interface
@@ -73,6 +74,7 @@ namespace Kikerdezo
                 TestView T = new TestView();            // Create and init new test view
                 T.Initialize(ref CurrentQBank);
                 T.Name = "Test";
+                T.Anchor = AnchorStyles.Top;
                 CurrentQBank.QTestView = T;
                 
                 DocViews.Add(T);                            //Register in DocViews
